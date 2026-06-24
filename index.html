@@ -1481,7 +1481,8 @@
 
           form.reset();
           statusBox.className = 'form-status success';
-          statusBox.textContent = "You're on the list. We'll email you the moment early access opens.";
+          statusBox.textContent = "You're on the list. Redirecting...";
+		  setTimeout(() => { window.location.href = 'thankyou.html'; }, 1200);
         } catch (error) {
           statusBox.className = 'form-status error';
           statusBox.textContent = 'Could not submit right now. Replace the Formspree endpoint and try again.';

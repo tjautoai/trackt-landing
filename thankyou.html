@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In | Trackt</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --bg: #0a0a0a;
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #3b6af5;
+      --primary-2: #5f86ff;
+      --secondary: #00d4aa;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+      --nav-h: 76px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59, 106, 245, 0.18), transparent 22%),
+        radial-gradient(circle at 10% 80%, rgba(0, 212, 170, 0.08), transparent 18%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 10, 10, 0.76);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      width: min(calc(100% - 32px), 1200px);
+      margin: 0 auto;
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.05em;
+    }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 16px;
+    }
+
+    .thank-wrap {
+      width: min(100%, 620px);
+      text-align: center;
+    }
+
+    /* ICON */
+    .check-ring {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(0, 212, 170, 0.08);
+      border: 1px solid rgba(0, 212, 170, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes pop {
+      from { opacity: 0; transform: scale(0.6); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .check-ring svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    /* BADGE */
+    .spot-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(59, 106, 245, 0.1);
+      border: 1px solid rgba(59, 106, 245, 0.2);
+      color: #d8e2ff;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      animation: fadein 0.5s 0.15s ease both;
+    }
+
+    .spot-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary-2);
+      box-shadow: 0 0 0 0 rgba(95, 134, 255, 0.6);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(95, 134, 255, 0.55); }
+      70%  { box-shadow: 0 0 0 10px rgba(95, 134, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(95, 134, 255, 0); }
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+      animation: fadein 0.5s 0.2s ease both;
+    }
+
+    h1 span {
+      color: var(--secondary);
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      animation: fadein 0.5s 0.28s ease both;
+    }
+
+    /* WHAT HAPPENS NEXT */
+    .next-steps {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 36px;
+      animation: fadein 0.5s 0.36s ease both;
+    }
+
+    .next-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(13,13,13,0.98));
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(0, 212, 170, 0.1);
+      color: var(--secondary);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text strong {
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 3px;
+      color: var(--text);
+    }
+
+    .step-text span {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* CTA */
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      animation: fadein 0.5s 0.44s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--primary-2), var(--primary));
+      color: var(--text);
+      box-shadow: 0 10px 24px rgba(59, 106, 245, 0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.14);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 28px 0 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 32px), 1200px);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 520px) {
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Trackt</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="thank-wrap">
+
+      <div class="check-ring">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="17" stroke="#00d4aa" stroke-width="1.5" fill="none"/>
+          <path d="M10 18.5L15.5 24L26 13" stroke="#00d4aa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="spot-badge">
+        <span class="spot-dot"></span>
+        Founding spot secured
+      </div>
+
+      <h1>You're in.<br><span>We'll take it from here.</span></h1>
+
+      <p class="sub">
+        You said it. Trackt caught it. Now sit tight. We'll email you the moment early access opens. No spam. Ever.
+      </p>
+
+      <div class="next-steps">
+        <div class="next-step">
+          <span class="step-num">01</span>
+          <div class="step-text">
+            <strong>You're on the list.</strong>
+            <span>Your spot is saved. We'll reach out directly when early access opens. No action needed from you.</span>
+          </div>
+        </div>
+        <div class="next-step">
+          <span class="step-num">02</span>
+          <div class="step-text">
+            <strong>Your founding price is locked</strong>
+            <span>As one of the first 100, your price is locked forever the moment you subscribe at launch.</span>
+          </div>
+        </div>
+        <div class="next-step">
+          <span class="step-num">03</span>
+          <div class="step-text">
+            <strong>We'll reach out before launch</strong>
+            <span>Founding members get early access and a heads-up before the public waitlist opens.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="index.html">Back to Trackt</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 Aaryx AI. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
