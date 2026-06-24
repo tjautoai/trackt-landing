@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Trackt</title>
+  <meta name="description" content="Trackt Privacy Policy. Learn how we collect, use, and protect your data." />
+  <meta name="theme-color" content="#0A0A0A" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #3b6af5;
+      --primary-2: #5f86ff;
+      --secondary: #00d4aa;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 20px;
+      --max: 1200px;
+      --nav-h: 76px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59, 106, 245, 0.12), transparent 22%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 10, 10, 0.76);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.05em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--primary-2), var(--primary));
+      color: var(--text);
+      box-shadow: 0 10px 24px rgba(59, 106, 245, 0.25);
+    }
+
+    /* CONTENT */
+    .legal-hero {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .legal-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    .legal-eyebrow::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .legal-hero h1 {
+      margin: 0 0 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .legal-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .legal-body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      padding: 56px 0 96px;
+      align-items: start;
+    }
+
+    /* SIDEBAR TOC */
+    .legal-toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 24px);
+      display: grid;
+      gap: 6px;
+    }
+
+    .legal-toc p {
+      margin: 0 0 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .legal-toc a {
+      display: block;
+      padding: 7px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .legal-toc a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* CONTENT AREA */
+    .legal-content {
+      display: grid;
+      gap: 48px;
+    }
+
+    .legal-section {
+      padding: 32px;
+      background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(13,13,13,0.98));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .legal-section h2 {
+      margin: 0 0 18px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .legal-section h2 .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(59, 106, 245, 0.12);
+      color: var(--primary-2);
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+
+    .legal-section p {
+      margin: 0 0 14px;
+      color: #d0d0d0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    .legal-section p:last-child { margin-bottom: 0; }
+
+    .legal-section ul {
+      margin: 10px 0 14px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .legal-section li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #d0d0d0;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .legal-section li::before {
+      content: '✓';
+      color: var(--secondary);
+      font-family: 'Space Mono', monospace;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .legal-section a {
+      color: var(--primary-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .highlight-box {
+      margin-top: 16px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      background: rgba(0, 212, 170, 0.06);
+      border: 1px solid rgba(0, 212, 170, 0.14);
+      color: #dffef5;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .table-wrap {
+      margin-top: 16px;
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    thead {
+      background: rgba(59, 106, 245, 0.08);
+    }
+
+    th {
+      padding: 12px 16px;
+      text-align: left;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: #d0d0d0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 38px 0 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px 24px;
+    }
+
+    .footer-copy { display: grid; gap: 6px; }
+
+    .footer-tagline,
+    .footer-meta { color: var(--muted); font-size: 0.94rem; }
+
+    .footer-site-link {
+      color: var(--primary);
+      font-size: 0.94rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 860px) {
+      .legal-body {
+        grid-template-columns: 1fr;
+      }
+      .legal-toc {
+        position: static;
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .legal-section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">Trackt</a>
+      <a class="btn btn-primary" href="index.html#waitlist">Join Waitlist</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="legal-hero">
+      <div class="container">
+        <div class="legal-eyebrow">Legal</div>
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Last updated: June 24, 2026 &nbsp;·&nbsp; Effective: June 24, 2026</p>
+      </div>
+    </div>
+
+    <div class="container legal-body">
+
+      <aside class="legal-toc">
+        <p>On this page</p>
+        <a href="#overview">Overview</a>
+        <a href="#what-we-collect">What We Collect</a>
+        <a href="#how-we-use">How We Use It</a>
+        <a href="#third-parties">Third Parties</a>
+        <a href="#data-retention">Data Retention</a>
+        <a href="#your-rights">Your Rights</a>
+        <a href="#security">Security</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#children">Children</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+      </aside>
+
+      <div class="legal-content">
+
+        <section class="legal-section" id="overview">
+          <h2><span class="section-num">01</span> Overview</h2>
+          <p>Trackt ("Trackt", "we", "us", or "our") is a product of Aaryx AI. This Privacy Policy explains how we collect, use, store, and protect information when you visit usetrackt.app or join our waitlist.</p>
+          <p>We are currently in pre-launch. The only personal data we collect at this stage is what you voluntarily provide when joining our waitlist. We do not yet connect to your Gmail, calendar, or any other account. That integration will require a separate, explicit authorization when the product launches.</p>
+          <div class="highlight-box">
+            The short version: we collect your name, email, and role when you join the waitlist. We use it only to contact you about Trackt. We never sell your data.
+          </div>
+        </section>
+
+        <section class="legal-section" id="what-we-collect">
+          <h2><span class="section-num">02</span> What We Collect</h2>
+          <p>At the waitlist stage, we collect only what you submit through the signup form:</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Why We Collect It</th>
+                  <th>Required?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>First name</td>
+                  <td>To address you personally in communications</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Email address</td>
+                  <td>To notify you when early access opens</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>Professional role</td>
+                  <td>To prioritize access for our target users</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-top: 18px;">We also collect standard technical data automatically when you visit the site:</p>
+          <ul>
+            <li>IP address and approximate location (country / region level)</li>
+            <li>Browser type and version</li>
+            <li>Pages visited and time spent on site</li>
+            <li>Referring URL</li>
+          </ul>
+          <p>This technical data is collected through standard web analytics and helps us understand how people find and use the site. It is not linked to your name or email address.</p>
+        </section>
+
+        <section class="legal-section" id="how-we-use">
+          <h2><span class="section-num">03</span> How We Use Your Data</h2>
+          <p>We use the data we collect for the following purposes only:</p>
+          <ul>
+            <li>To send you early access notifications when Trackt launches</li>
+            <li>To send occasional product updates relevant to the waitlist (infrequent, no spam)</li>
+            <li>To understand which professional roles are most interested in Trackt, so we can build the right product</li>
+            <li>To improve the landing page experience based on aggregate, anonymized analytics</li>
+          </ul>
+          <p>We will never use your email address to send unrelated marketing, sell advertising, or contact you on behalf of third parties.</p>
+          <p>The legal basis for processing your data under GDPR is your explicit consent provided when you submitted the waitlist form. You may withdraw this consent at any time by emailing <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a>.</p>
+        </section>
+
+        <section class="legal-section" id="third-parties">
+          <h2><span class="section-num">04</span> Third Parties and Data Processors</h2>
+          <p>We use a small number of trusted third-party services to operate. These services act as data processors on our behalf and are contractually required to protect your data:</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Purpose</th>
+                  <th>Data Shared</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Formspree</td>
+                  <td>Form submission and email routing</td>
+                  <td>Name, email, role</td>
+                </tr>
+                <tr>
+                  <td>Vercel</td>
+                  <td>Website hosting and delivery</td>
+                  <td>IP address, page visits</td>
+                </tr>
+                <tr>
+                  <td>Google Fonts</td>
+                  <td>Typography rendering</td>
+                  <td>IP address (standard CDN request)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-top: 18px;">We do not sell, rent, trade, or share your personal data with any other third party for their own marketing purposes. Ever.</p>
+          <p>When the full product launches, Gmail and calendar integrations will require a separate OAuth authorization process. You will be clearly informed what data those connections access before you grant permission.</p>
+        </section>
+
+        <section class="legal-section" id="data-retention">
+          <h2><span class="section-num">05</span> Data Retention</h2>
+          <p>We retain your waitlist data until one of the following occurs:</p>
+          <ul>
+            <li>You request deletion (see Your Rights below)</li>
+            <li>The product has launched and the waitlist period has closed</li>
+            <li>We determine the product will not launch, at which point we will delete all waitlist data within 30 days</li>
+          </ul>
+          <p>Anonymous, aggregated analytics data (no name or email attached) may be retained indefinitely for internal reporting purposes.</p>
+        </section>
+
+        <section class="legal-section" id="your-rights">
+          <h2><span class="section-num">06</span> Your Rights</h2>
+          <p>Depending on where you are located, you may have the following rights regarding your personal data:</p>
+          <ul>
+            <li><strong>Access:</strong> Request a copy of the data we hold about you</li>
+            <li><strong>Correction:</strong> Ask us to correct inaccurate data</li>
+            <li><strong>Deletion:</strong> Ask us to delete your data ("right to be forgotten")</li>
+            <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+            <li><strong>Withdraw consent:</strong> Opt out of all communications at any time</li>
+            <li><strong>Object to processing:</strong> Object to how we use your data</li>
+          </ul>
+          <p>These rights apply to users under GDPR (EU / UK) and similar rights exist for California residents under CCPA. We honor these requests regardless of your location.</p>
+          <p>To exercise any of these rights, email us at <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a>. We will respond within 30 days. We do not charge for these requests.</p>
+          <div class="highlight-box">
+            The simplest way to leave the waitlist: email <a href="mailto:privacy@usetrackt.app" style="color: inherit; font-weight: 600;">privacy@usetrackt.app</a> with the subject "Remove me" and we will delete your data within 5 business days.
+          </div>
+        </section>
+
+        <section class="legal-section" id="security">
+          <h2><span class="section-num">07</span> Security</h2>
+          <p>We take reasonable technical and organizational measures to protect your data. The site is served over HTTPS. Form submissions are encrypted in transit via Formspree's secure infrastructure.</p>
+          <p>That said, no system is 100% secure. We cannot guarantee absolute security of data transmitted over the internet. In the event of a data breach affecting your personal data, we will notify you within 72 hours as required by GDPR, and will cooperate fully with any regulatory investigation.</p>
+        </section>
+
+        <section class="legal-section" id="cookies">
+          <h2><span class="section-num">08</span> Cookies</h2>
+          <p>Our waitlist landing page currently does not use tracking cookies or advertising cookies. We do not use Google Analytics, Facebook Pixel, or any behavioral tracking scripts at this stage.</p>
+          <p>The only cookies that may be set are strictly necessary functional cookies from our hosting provider (Vercel) required to serve the page. These do not track you across other sites and do not require consent under most privacy laws.</p>
+          <p>If we introduce analytics or marketing cookies in the future, we will update this policy and implement a cookie consent mechanism at that time.</p>
+        </section>
+
+        <section class="legal-section" id="children">
+          <h2><span class="section-num">09</span> Children's Privacy</h2>
+          <p>Trackt is intended for professional use by adults. We do not knowingly collect personal data from anyone under the age of 16. If you believe a minor has submitted data through our waitlist, please contact us immediately at <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a> and we will delete it promptly.</p>
+        </section>
+
+        <section class="legal-section" id="changes">
+          <h2><span class="section-num">10</span> Changes to This Policy</h2>
+          <p>We will update this Privacy Policy as the product evolves, particularly when Gmail and calendar integrations are added. When we make material changes, we will notify waitlist members by email and update the "Last updated" date at the top of this page.</p>
+          <p>Continued use of the site after changes are posted constitutes acceptance of the revised policy.</p>
+        </section>
+
+        <section class="legal-section" id="contact">
+          <h2><span class="section-num">11</span> Contact Us</h2>
+          <p>Trackt is operated by Aaryx AI. If you have any questions about this Privacy Policy or how we handle your data, please reach out:</p>
+          <ul>
+            <li>Email: <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a></li>
+            <li>Website: <a href="https://usetrackt.app">usetrackt.app</a></li>
+            <li>Company: Aaryx AI</li>
+            <li>Location: Pittsburgh, Pennsylvania, USA</li>
+          </ul>
+          <p>We aim to respond to all privacy-related inquiries within 5 business days.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <div class="logo">Trackt</div>
+        <div class="footer-tagline">Every morning. Everything that matters.</div>
+        <div class="footer-meta">© 2026 Aaryx AI. All rights reserved.</div>
+        <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
