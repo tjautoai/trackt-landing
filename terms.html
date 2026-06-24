@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | Trackt</title>
+  <meta name="description" content="Trackt Terms of Service. The rules governing your use of the Trackt waitlist and platform." />
+  <meta name="theme-color" content="#0A0A0A" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #3b6af5;
+      --primary-2: #5f86ff;
+      --secondary: #00d4aa;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 20px;
+      --max: 1200px;
+      --nav-h: 76px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59, 106, 245, 0.12), transparent 22%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 10, 10, 0.76);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.05em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--primary-2), var(--primary));
+      color: var(--text);
+      box-shadow: 0 10px 24px rgba(59, 106, 245, 0.25);
+    }
+
+    .legal-hero {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .legal-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    .legal-eyebrow::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .legal-hero h1 {
+      margin: 0 0 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .legal-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .legal-body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      padding: 56px 0 96px;
+      align-items: start;
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 24px);
+      display: grid;
+      gap: 6px;
+    }
+
+    .legal-toc p {
+      margin: 0 0 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .legal-toc a {
+      display: block;
+      padding: 7px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .legal-toc a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .legal-content {
+      display: grid;
+      gap: 48px;
+    }
+
+    .legal-section {
+      padding: 32px;
+      background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(13,13,13,0.98));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .legal-section h2 {
+      margin: 0 0 18px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .legal-section h2 .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(59, 106, 245, 0.12);
+      color: var(--primary-2);
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+
+    .legal-section p {
+      margin: 0 0 14px;
+      color: #d0d0d0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    .legal-section p:last-child { margin-bottom: 0; }
+
+    .legal-section ul {
+      margin: 10px 0 14px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .legal-section li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #d0d0d0;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .legal-section li::before {
+      content: '→';
+      color: var(--primary-2);
+      font-family: 'Space Mono', monospace;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .legal-section a {
+      color: var(--primary-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .highlight-box {
+      margin-top: 16px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      background: rgba(59, 106, 245, 0.06);
+      border: 1px solid rgba(59, 106, 245, 0.18);
+      color: #d8e2ff;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .warning-box {
+      margin-top: 16px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      background: rgba(255, 160, 50, 0.06);
+      border: 1px solid rgba(255, 160, 50, 0.16);
+      color: #ffe8c0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .site-footer {
+      padding: 38px 0 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px 24px;
+    }
+
+    .footer-copy { display: grid; gap: 6px; }
+    .footer-tagline, .footer-meta { color: var(--muted); font-size: 0.94rem; }
+
+    .footer-site-link {
+      color: var(--primary);
+      font-size: 0.94rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 860px) {
+      .legal-body { grid-template-columns: 1fr; }
+      .legal-toc { position: static; display: none; }
+    }
+
+    @media (max-width: 520px) {
+      .legal-section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">Trackt</a>
+      <a class="btn btn-primary" href="index.html#waitlist">Join Waitlist</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="legal-hero">
+      <div class="container">
+        <div class="legal-eyebrow">Legal</div>
+        <h1>Terms of Service</h1>
+        <p class="legal-meta">Last updated: June 24, 2026 &nbsp;·&nbsp; Effective: June 24, 2026</p>
+      </div>
+    </div>
+
+    <div class="container legal-body">
+
+      <aside class="legal-toc">
+        <p>On this page</p>
+        <a href="#acceptance">Acceptance</a>
+        <a href="#service-description">What Trackt Is</a>
+        <a href="#waitlist">Waitlist Terms</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#acceptable-use">Acceptable Use</a>
+        <a href="#intellectual-property">Intellectual Property</a>
+        <a href="#disclaimers">Disclaimers</a>
+        <a href="#liability">Liability</a>
+        <a href="#termination">Termination</a>
+        <a href="#governing-law">Governing Law</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+      </aside>
+
+      <div class="legal-content">
+
+        <section class="legal-section" id="acceptance">
+          <h2><span class="section-num">01</span> Acceptance of Terms</h2>
+          <p>By accessing usetrackt.app or submitting your information to join the Trackt waitlist, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree, please do not use the site or submit your information.</p>
+          <p>These Terms apply to all visitors, waitlist members, and future users of the Trackt platform operated by Aaryx AI ("Company", "we", "us", or "our").</p>
+          <div class="highlight-box">
+            These Terms are written in plain language on purpose. If something is unclear, email us at <a href="mailto:hello@usetrackt.app" style="color: inherit; font-weight: 600;">hello@usetrackt.app</a> and we will explain it.
+          </div>
+        </section>
+
+        <section class="legal-section" id="service-description">
+          <h2><span class="section-num">02</span> What Trackt Is</h2>
+          <p>Trackt is a morning intelligence briefing tool designed to help professionals manage relationships over email by surfacing commitments made, missed follow-ups, approaching deadlines, and calendar risks. The product is currently in pre-launch.</p>
+          <p>At the time of these Terms, the only active service is the waitlist signup at usetrackt.app. No software subscription, email scanning, or calendar access is provided or enabled at this stage.</p>
+          <p>When the product launches, additional terms specific to the software service will be provided at the time of account creation. Those terms will govern your use of the Trackt application itself.</p>
+        </section>
+
+        <section class="legal-section" id="waitlist">
+          <h2><span class="section-num">03</span> Waitlist Terms</h2>
+          <p>By joining the waitlist you agree to the following:</p>
+          <ul>
+            <li>You are providing your contact information voluntarily in exchange for early access notifications</li>
+            <li>Joining the waitlist does not guarantee access to the product, a specific launch date, or any particular feature set</li>
+            <li>We will contact you only about Trackt. We will not use your email for unrelated marketing</li>
+            <li>You can leave the waitlist at any time by emailing <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a></li>
+            <li>We reserve the right to close, pause, or modify the waitlist at any time</li>
+          </ul>
+          <div class="warning-box">
+            Joining the waitlist is not a purchase, contract, or binding commitment from either party. No payment is taken at this stage.
+          </div>
+        </section>
+
+        <section class="legal-section" id="pricing">
+          <h2><span class="section-num">04</span> Founding Member Pricing</h2>
+          <p>We advertise founding member pricing for the first 100 waitlist members who convert to paying subscribers at launch. The advertised pricing as of the date of these Terms is:</p>
+          <ul>
+            <li>Starter: $14.99/month (regular $29/month)</li>
+            <li>Professional: $49.99/month (regular $97/month)</li>
+          </ul>
+          <p>The founding member price lock is a stated commercial intention, not a legally binding contract at the waitlist stage. The price lock becomes binding only upon execution of a subscription agreement at the time of product launch.</p>
+          <p>We reserve the right to adjust pricing before launch. If founding pricing changes materially from what is advertised, we will notify all waitlist members by email before launch so they can make an informed decision.</p>
+          <p>No payment information is collected through the waitlist form. No charges will be made without your explicit consent at the time of subscription.</p>
+        </section>
+
+        <section class="legal-section" id="acceptable-use">
+          <h2><span class="section-num">05</span> Acceptable Use</h2>
+          <p>When using usetrackt.app you agree not to:</p>
+          <ul>
+            <li>Submit false, misleading, or fraudulent information through the waitlist form</li>
+            <li>Attempt to gain unauthorized access to any part of the site or its infrastructure</li>
+            <li>Use automated tools or bots to submit multiple waitlist entries</li>
+            <li>Scrape, harvest, or collect data from the site without written permission</li>
+            <li>Use the site in any way that violates applicable local, state, national, or international law</li>
+            <li>Attempt to interfere with or disrupt the integrity or performance of the site</li>
+            <li>Transmit any unsolicited or unauthorized advertising or promotional material</li>
+          </ul>
+          <p>Violation of these terms may result in removal from the waitlist and being blocked from future access to the platform.</p>
+        </section>
+
+        <section class="legal-section" id="intellectual-property">
+          <h2><span class="section-num">06</span> Intellectual Property</h2>
+          <p>All content on usetrackt.app including but not limited to text, copy, design, graphics, logos, product names, and code is owned by or licensed to Aaryx AI and is protected by applicable intellectual property laws.</p>
+          <p>The Trackt name and product concept are proprietary to Aaryx AI. Nothing on this site grants you any right to use our trademarks, trade names, or branding without prior written permission.</p>
+          <p>You retain ownership of any information you submit through the waitlist form. By submitting it you grant us a limited, non-exclusive license to use that information for the purposes described in our Privacy Policy.</p>
+        </section>
+
+        <section class="legal-section" id="disclaimers">
+          <h2><span class="section-num">07</span> Disclaimers</h2>
+          <p>The Trackt waitlist site is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that:</p>
+          <ul>
+            <li>The site will be uninterrupted, error-free, or secure</li>
+            <li>The product will launch on any specific date or with any specific features</li>
+            <li>The founding pricing advertised will remain unchanged through to launch</li>
+            <li>The site will be free from viruses or other harmful components</li>
+          </ul>
+          <p>We disclaim all implied warranties including merchantability, fitness for a particular purpose, and non-infringement to the fullest extent permitted by law.</p>
+          <div class="warning-box">
+            Trackt is a pre-launch product. The mock demos shown on the landing page represent intended functionality and are not a guarantee of the final product's capabilities or accuracy.
+          </div>
+        </section>
+
+        <section class="legal-section" id="liability">
+          <h2><span class="section-num">08</span> Limitation of Liability</h2>
+          <p>To the fullest extent permitted by applicable law, Aaryx AI and its founders, employees, contractors, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from:</p>
+          <ul>
+            <li>Your use of or inability to use the waitlist site</li>
+            <li>Any delay in or failure of product launch</li>
+            <li>Loss of data or unauthorized access to your submitted information</li>
+            <li>Any errors or omissions in the content on the site</li>
+          </ul>
+          <p>Our total liability to you for any claims arising under these Terms shall not exceed $0, as no payment has been made at the waitlist stage.</p>
+          <p>Some jurisdictions do not allow certain limitations of liability. In those jurisdictions, our liability is limited to the minimum extent permitted by applicable law.</p>
+        </section>
+
+        <section class="legal-section" id="termination">
+          <h2><span class="section-num">09</span> Termination</h2>
+          <p>We reserve the right to terminate or suspend your access to the waitlist or site at any time, with or without notice, for any reason including violation of these Terms.</p>
+          <p>You may remove yourself from the waitlist at any time by emailing <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a>. Removal from the waitlist does not affect any legal obligations that arose prior to termination.</p>
+        </section>
+
+        <section class="legal-section" id="governing-law">
+          <h2><span class="section-num">10</span> Governing Law and Disputes</h2>
+          <p>These Terms are governed by the laws of the Commonwealth of Pennsylvania, United States, without regard to conflict of law principles.</p>
+          <p>Any dispute arising from these Terms that cannot be resolved informally shall be submitted to binding arbitration in Pittsburgh, Pennsylvania, under the rules of the American Arbitration Association. Class action lawsuits and class-wide arbitration are waived to the fullest extent permitted by law.</p>
+          <p>Before initiating any formal dispute process, we ask that you contact us at <a href="mailto:hello@usetrackt.app">hello@usetrackt.app</a> and give us 30 days to attempt to resolve the issue informally.</p>
+        </section>
+
+        <section class="legal-section" id="changes">
+          <h2><span class="section-num">11</span> Changes to These Terms</h2>
+          <p>We may update these Terms as the product evolves. When we make material changes, we will notify waitlist members by email and update the "Last updated" date at the top of this page.</p>
+          <p>Your continued use of the site after changes are posted constitutes acceptance of the revised Terms. If you do not agree to the revised Terms, remove yourself from the waitlist by emailing <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a>.</p>
+        </section>
+
+        <section class="legal-section" id="contact">
+          <h2><span class="section-num">12</span> Contact</h2>
+          <p>Questions about these Terms? We are humans. Email us:</p>
+          <ul>
+            <li>General: <a href="mailto:hello@usetrackt.app">hello@usetrackt.app</a></li>
+            <li>Privacy matters: <a href="mailto:privacy@usetrackt.app">privacy@usetrackt.app</a></li>
+            <li>Website: <a href="https://usetrackt.app">usetrackt.app</a></li>
+            <li>Company: Aaryx AI, Pittsburgh, Pennsylvania, USA</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <div class="logo">Trackt</div>
+        <div class="footer-tagline">Every morning. Everything that matters.</div>
+        <div class="footer-meta">© 2026 Aaryx AI. All rights reserved.</div>
+        <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
