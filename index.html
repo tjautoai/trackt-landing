@@ -3,40 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trackt | Every morning. Everything that matters.</title>
+  <title>Trackt | Every commitment. Every risk. One view.</title>
   <meta
     name="description"
-    content="Trackt scans your Gmail and calendar every morning and surfaces every promise, follow-up, and deadline you need to act on before your day starts."
+    content="Trackt is a communication risk intelligence platform that surfaces broken promises, missed follow-ups, unanswered questions, and deadlines before the relationship takes the hit."
   />
-  <meta property="og:title" content="Trackt | Every morning. Everything that matters." />
+  <meta property="og:title" content="Trackt | Every commitment. Every risk. One view." />
   <meta
     property="og:description"
-    content="You said it. Trackt caught it. Join the waitlist for early access and founding pricing."
+    content="Trackt gives professionals one live view of communication risk across commitments, follow-ups, unanswered questions, and deadlines."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://usetrackt.app" />
-  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
     :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --surface-2: #151515;
-      --surface-3: #0f0f0f;
-      --border: rgba(255, 255, 255, 0.1);
-      --border-strong: rgba(59, 106, 245, 0.35);
-      --primary: #3b6af5;
-      --primary-2: #5f86ff;
-      --secondary: #00d4aa;
-      --text: #ffffff;
-      --muted: #a0a0a0;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --radius: 20px;
-      --radius-sm: 14px;
-      --max: 1200px;
-      --nav-h: 76px;
-    }
+  --bg: #0a0e1a;
+  --surface: #101726;
+  --surface-2: #111b2d;
+  --surface-3: #0d1524;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(0, 212, 200, 0.32);
+  --primary: #00d4c8;
+  --primary-2: #12e6db;
+  --secondary: #3b6af5;
+  --text: #ffffff;
+  --muted: #9fb0c6;
+  --shadow: 0 24px 72px rgba(0, 0, 0, 0.38);
+  --radius: 20px;
+  --radius-sm: 14px;
+  --max: 1220px;
+  --nav-h: 88px;
+}
 
     * {
       box-sizing: border-box;
@@ -50,8 +54,9 @@
       margin: 0;
       font-family: 'Inter', sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(59, 106, 245, 0.18), transparent 22%),
-        radial-gradient(circle at 10% 20%, rgba(0, 212, 170, 0.08), transparent 18%),
+        radial-gradient(circle at top right, rgba(59, 106, 245, 0.16), transparent 24%),
+        radial-gradient(circle at 14% 18%, rgba(0, 212, 200, 0.12), transparent 20%),
+        radial-gradient(circle at 50% 100%, rgba(0, 153, 168, 0.08), transparent 28%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -155,13 +160,17 @@
       gap: 16px;
     }
 
-    .logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.05em;
-    }
+    .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.brand-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
 
     .nav-actions {
       display: flex;
@@ -255,12 +264,12 @@
     .btn-primary {
       background: linear-gradient(180deg, var(--primary-2), var(--primary));
       color: var(--text);
-      box-shadow: 0 10px 24px rgba(59, 106, 245, 0.25);
+      box-shadow: 0 12px 28px rgba(0, 212, 200, 0.22);
     }
 
     .btn-primary:hover,
     .btn-primary:focus-visible {
-      box-shadow: 0 14px 32px rgba(59, 106, 245, 0.32);
+      box-shadow: 0 16px 36px rgba(0, 212, 200, 0.28);
     }
 
     .btn-ghost {
@@ -290,18 +299,53 @@
     .hero-copy h1 {
       margin: 0;
       font-family: 'Space Mono', monospace;
-      font-size: clamp(2.8rem, 7vw, 5.4rem);
-      line-height: 0.98;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 0.96;
       letter-spacing: -0.06em;
-      max-width: 11ch;
+      max-width: 10ch;
     }
 
     .hero-copy p {
       margin: 20px 0 0;
       max-width: 660px;
       color: var(--muted);
-      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      font-size: clamp(1rem, 1.5vw, 1.14rem);
     }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: #dbe7ff;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.88;
+    }
+
+    .hero-badge.at-risk { color: #9cc4ff; }
+    .hero-badge.needs { color: #7ef2e6; }
+    .hero-badge.waiting { color: #c5d2e8; }
 
     .hero-actions {
       display: flex;
@@ -317,10 +361,146 @@
     }
 
     .hero-visual {
-      position: relative;
-    }
+  position: relative;
+}
 
-    .hero-panel {
+.dashboard-shell {
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(10, 14, 26, 0.98), rgba(15, 23, 38, 0.96));
+  padding: 18px;
+}
+
+.dashboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.dashboard-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9ecf3;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dashboard-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--primary-2), var(--primary));
+  box-shadow: 0 0 0 6px rgba(0, 212, 200, 0.08);
+}
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-card {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.summary-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Space Mono', monospace;
+}
+
+.summary-value {
+  display: block;
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 1.32rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.bucket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.bucket-column {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 100%;
+}
+
+.bucket-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bucket-label.at-risk { background: rgba(59, 106, 245, 0.12); color: #b7ceff; }
+.bucket-label.needs { background: rgba(0, 212, 200, 0.12); color: #8ff8ee; }
+.bucket-label.waiting { background: rgba(210, 218, 235, 0.1); color: #dbe5f5; }
+
+.bucket-item { display: grid; gap: 8px; }
+
+.bucket-item strong {
+  display: block;
+  line-height: 1.35;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.bucket-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.confidence-row {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #d7e0ee;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'Space Mono', monospace;
+}
+
+.reply-row {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 212, 200, 0.16);
+  background: rgba(0, 212, 200, 0.08);
+  color: #e4fff9;
+  font-size: 0.88rem;
+}
+
+.hero-panel {
       position: relative;
       background: linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.92));
       border: 1px solid var(--border);
@@ -336,8 +516,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(0, 212, 170, 0.15), transparent 20%),
-        radial-gradient(circle at 85% 10%, rgba(59, 106, 245, 0.22), transparent 24%);
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 200, 0.15), transparent 20%),
+        radial-gradient(circle at 85% 10%, rgba(59, 106, 245, 0.2), transparent 24%);
       pointer-events: none;
       z-index: -1;
     }
@@ -871,7 +1051,13 @@
 
     .footer-copy {
       display: grid;
-      gap: 8px;
+      gap: 10px;
+    }
+
+    .footer-logo {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
     }
 
     .footer-tagline,
@@ -982,6 +1168,11 @@
         max-width: 10ch;
       }
 
+      .dashboard-summary,
+      .bucket-grid {
+        grid-template-columns: 1fr;
+      }
+
       .proof-card,
       .form-shell,
       .pricing-card,
@@ -1032,76 +1223,106 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav-inner">
-      <a class="logo" href="#top" aria-label="Trackt home">Trackt</a>
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Trackt home">
+      <img class="brand-logo" src="assets/trackt_horizontal_dark.svg" onerror="this.onerror=null;this.src='assets/trackt_horizontal_dark.png';" alt="Trackt" />
+    </a>
 
-      <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
-        <a href="#problem">Problem</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#detects">What It Detects</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#waitlist">Waitlist</a>
-      </nav>
+    <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+      <a href="#problem">Problem</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#detects">Signals</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#waitlist">Waitlist</a>
+    </nav>
 
-      <div class="nav-actions">
-        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
-          <span></span>
-        </button>
-        <a class="btn btn-primary" href="#waitlist">Join Waitlist</a>
-      </div>
+    <div class="nav-actions">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span></span>
+      </button>
+      <a class="btn btn-primary" href="#waitlist">Get Early Access</a>
     </div>
-  </header>
+  </div>
+</header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy fade-up">
-          <div class="eyebrow">Now in early access</div>
-          <h1>Every morning. Everything that matters.</h1>
-          <p>
-            Trackt scans your Gmail and calendar every morning and surfaces every promise, follow-up, and deadline you need to act on. Before your day starts.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
-            <a class="btn btn-ghost" href="#how-it-works">See How It Works</a>
+  <div class="container hero-grid">
+    <div class="hero-copy fade-up">
+      <div class="eyebrow">Communication risk intelligence</div>
+      <h1>Every commitment. Every risk. One view.</h1>
+      <p>
+        Trackt watches Gmail threads and calendar context to surface broken promises, missed follow-ups, unanswered questions, and deadlines before the relationship takes the hit.
+      </p>
+      <div class="hero-badges" aria-label="Trackt dashboard buckets">
+        <span class="hero-badge at-risk">At Risk</span>
+        <span class="hero-badge needs">Needs Attention</span>
+        <span class="hero-badge waiting">Waiting on Others</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
+        <a class="btn btn-ghost" href="#how-it-works">See How It Works</a>
+      </div>
+      <div class="hero-note">First 100 members lock in founding pricing and shape what gets built next.</div>
+    </div>
+
+    <div class="hero-visual fade-up">
+      <div class="hero-panel">
+        <div class="dashboard-shell" aria-label="Trackt risk dashboard preview">
+          <div class="dashboard-top">
+            <div class="dashboard-brand"><span class="dashboard-mark" aria-hidden="true"></span><span>Trackt control tower</span></div>
+            <span>Live relationship risk view</span>
           </div>
-          <div class="hero-note">First 100 members lock in founding pricing forever.</div>
-        </div>
-
-        <div class="hero-visual fade-up">
-          <div class="hero-panel">
-            <div class="phone-shell" aria-label="Trackt morning briefing preview">
-              <div class="phone-top">
-                <span>7:00 AM briefing</span>
-                <span class="pulse-pill"><span class="pulse-dot"></span> Morning intelligence</span>
-              </div>
-
-              <div class="briefing-card">
-                <div class="label">At risk</div>
-                <h3>You said you'd send the proposal by Friday.</h3>
-                <p>6 days ago. Still unsent. Client momentum is fading.</p>
-              </div>
-
-              <div class="briefing-card">
-                <div class="label">Needs attention</div>
-                <h3>Interview feedback follow-up is sitting unanswered.</h3>
-                <p>4 days of silence. Trackt flagged the thread before it goes cold.</p>
-              </div>
-
-              <div class="briefing-card">
-                <div class="label">Today's blind spot</div>
-                <h3>Meeting tomorrow. Prep email never sent.</h3>
-                <p>Calendar caught it. Gmail confirmed it. Trackt surfaced it.</p>
-              </div>
+          <div class="dashboard-summary">
+            <div class="summary-card">
+              <span class="summary-label">Active commitments</span>
+              <span class="summary-value">24</span>
+            </div>
+            <div class="summary-card">
+              <span class="summary-label">High-confidence risks</span>
+              <span class="summary-value">07</span>
+            </div>
+            <div class="summary-card">
+              <span class="summary-label">Suggested replies ready</span>
+              <span class="summary-value">11</span>
             </div>
           </div>
+          <div class="bucket-grid">
+            <div class="bucket-column">
+              <div class="bucket-label at-risk">At Risk</div>
+              <div class="bucket-item">
+                <strong>Proposal promised Friday. Still unsent.</strong>
+                <p>Client momentum is fading. Suggested reply ready now.</p>
+              </div>
+              <div class="confidence-row"><span>High confidence</span><span>Overdue</span></div>
+            </div>
+            <div class="bucket-column">
+              <div class="bucket-label needs">Needs Attention</div>
+              <div class="bucket-item">
+                <strong>Interview follow-up unanswered for 4 days.</strong>
+                <p>Candidate risk rising. Trackt suggests the next touch.</p>
+              </div>
+              <div class="confidence-row"><span>Medium confidence</span><span>Urgent</span></div>
+            </div>
+            <div class="bucket-column">
+              <div class="bucket-label waiting">Waiting on Others</div>
+              <div class="bucket-item">
+                <strong>Vendor promised revised timeline by Tuesday.</strong>
+                <p>Follow-up window opens tomorrow morning.</p>
+              </div>
+              <div class="confidence-row"><span>High confidence</span><span>Waiting</span></div>
+            </div>
+          </div>
+          <div class="reply-row">Suggested next move: own the miss quickly, reset expectations, and send the contextual reply before the other side has to ask.</div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="social-proof">
       <div class="container">
-        Built for independent recruiters. Consultants. Freelancers. Anyone who manages relationships over email and can't afford to drop the ball.
+        Built for professionals whose revenue depends on trust, timing, and follow-through across email.
       </div>
     </section>
 
@@ -1109,7 +1330,7 @@
       <div class="container">
         <div class="section-header fade-up">
           <div class="eyebrow">Sound familiar?</div>
-          <h2>Things are slipping through your inbox right now.</h2>
+          <h2>Relationship risk is already sitting inside your inbox.</h2>
         </div>
 
         <div class="snippet-grid">
@@ -1141,7 +1362,7 @@
           </article>
         </div>
 
-        <p class="problem-line fade-up">Every missed follow-up costs you money. Trackt makes sure nothing slips.</p>
+        <p class="problem-line fade-up">Trackt turns invisible communication leakage into a visible, prioritized action queue.</p>
       </div>
     </section>
 
@@ -1149,32 +1370,32 @@
       <div class="container">
         <div class="section-header fade-up">
           <div class="eyebrow">How it works</div>
-          <h2>Four steps. Zero missed follow-ups.</h2>
+          <h2>Simple setup. High-leverage visibility.</h2>
         </div>
 
         <div class="steps-grid">
           <article class="step-card fade-up">
             <div class="step-number">01</div>
-            <h3>Connect Gmail + Calendar</h3>
-            <p>Two minutes. Secure connection. No messy setup project.</p>
+            <h3>Connect Gmail</h3>
+            <p>Secure account connection. No CRM migration. No manual entry.</p>
           </article>
 
           <article class="step-card fade-up">
             <div class="step-number">02</div>
-            <h3>Set your morning briefing time</h3>
-            <p>Default is 7am. Choose when you want your day surfaced before it starts.</p>
+            <h3>Trackt scans threads and commitments</h3>
+            <p>Email language, unanswered questions, deadlines, and follow-up gaps get translated into risk.</p>
           </article>
 
           <article class="step-card fade-up">
             <div class="step-number">03</div>
-            <h3>Wake up to your daily briefing on your phone</h3>
-            <p>Promises, follow-ups, deadlines, and relationship risks. All in one clean view.</p>
+            <h3>See one dashboard</h3>
+            <p>At Risk, Needs Attention, and Waiting on Others keep urgency obvious without becoming another inbox.</p>
           </article>
 
           <article class="step-card fade-up">
             <div class="step-number">04</div>
-            <h3>Act, snooze, or dismiss</h3>
-            <p>Take action fast. Keep what matters moving. Let nothing slip.</p>
+            <h3>Take the next move fast</h3>
+            <p>Copy the contextual suggested reply, follow up, or resolve the risk in one motion.</p>
           </article>
         </div>
       </div>
@@ -1183,34 +1404,34 @@
     <section class="section" id="detects">
       <div class="container">
         <div class="section-header fade-up">
-          <div class="eyebrow">What Trackt catches</div>
-          <h2>Your inbox has a memory. Now you do too.</h2>
+          <div class="eyebrow">What Trackt detects</div>
+          <h2>Trackt shows what is on fire and what can still be saved.</h2>
         </div>
 
         <div class="detect-grid">
           <article class="detect-card fade-up">
-            <h3>Email</h3>
+            <h3>Thread intelligence</h3>
             <ul>
-              <li>Promises made</li>
-              <li>Questions unanswered</li>
-              <li>Follow-ups missed</li>
-              <li>Deadlines approaching</li>
-              <li>Cold relationships</li>
+              <li>Broken promises</li>
+              <li>Questions left unanswered</li>
+              <li>Follow-ups going cold</li>
+              <li>Deadlines approaching or overdue</li>
+              <li>Relationship temperature dropping</li>
             </ul>
           </article>
 
           <article class="detect-card fade-up">
-            <h3>Calendar</h3>
+            <h3>Time and context signals</h3>
             <ul>
-              <li>Today's meetings</li>
-              <li>Missing prep emails</li>
-              <li>Post-meeting actions</li>
-              <li>Renewals and check-ins</li>
+              <li>Meeting prep that never happened</li>
+              <li>Post-meeting actions still unsent</li>
+              <li>Renewals and check-ins approaching</li>
+              <li>Waiting-on-others follow-up timing</li>
             </ul>
           </article>
         </div>
 
-        <p class="magic-line fade-up">And then it cross-references both. That's the magic.</p>
+        <p class="magic-line fade-up">The product does not just report activity. It tells you what matters now, why it matters, and what to do next.</p>
       </div>
     </section>
 
@@ -1218,17 +1439,17 @@
       <div class="container mirror-wrap">
         <div class="section-header fade-up">
           <span class="eyebrow-pill">Real example</span>
-          <h2>Here's what Trackt surfaces every morning.</h2>
+          <h2>Here is what Trackt surfaces before trust takes the hit.</h2>
         </div>
 
         <article class="proof-card fade-up" aria-label="Mock Trackt risk card">
           <div class="risk-title">AT RISK</div>
-          <h3>You said: “I'll have the Q4 report to you by end of day Friday.”</h3>
+          <h3>You said: “I'll send the revised proposal by Friday so you can review before the weekend.”</h3>
           <div class="proof-lines">
-            <div class="proof-line-item">This commitment has not been fulfilled.</div>
-            <div class="proof-line-item">Sarah Mitchell (Client) is still waiting. Overdue by 3 days.</div>
+            <div class="proof-line-item">The commitment was made clearly in-thread and never fulfilled.</div>
+            <div class="proof-line-item">Sarah Mitchell is still waiting. Relationship confidence is now eroding faster than the task itself.</div>
           </div>
-          <div class="reply-pill">Suggested reply: [One click to send]</div>
+          <div class="reply-pill">Suggested reply ready. Own the miss. Reset the expectation. Send before she has to ask again.</div>
         </article>
       </div>
     </section>
@@ -1237,7 +1458,7 @@
       <div class="container">
         <div class="section-header fade-up">
           <div class="eyebrow">Who Trackt is built for</div>
-          <h2>Built for professionals who manage relationships over email and can't afford to drop the ball.</h2>
+          <h2>Built for operators whose reputation and revenue depend on follow-through.</h2>
         </div>
 
         <div class="roles-grid">
@@ -1287,58 +1508,56 @@
     </section>
 
     <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-header fade-up">
-          <div class="eyebrow">Founding member pricing</div>
-          <h2>First 100 members lock in these prices forever.</h2>
-        </div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Founding member pricing</div>
+      <h2>First 100 members lock in the founding rate forever.</h2>
+    </div>
 
-        <div class="pricing-grid">
-          <article class="pricing-card fade-up">
-            <div class="tier">Starter</div>
-            <h3>Founding $14.99/month</h3>
-            <div class="price">$14.99<small>Was $29/month</small></div>
-            <ul>
-              <li>1 Gmail account</li>
-              <li>Daily morning briefing</li>
-              <li>Risk detection</li>
-              <li>Act / Snooze / Dismiss</li>
-            </ul>
-          </article>
+    <div class="pricing-grid">
+      <article class="pricing-card fade-up">
+        <div class="tier">Starter</div>
+        <h3>Founding $14.99/month</h3>
+        <div class="price">$14.99<small>Was $29/month</small></div>
+        <ul>
+          <li>1 Gmail account</li>
+          <li>Daily risk view</li>
+          <li>Core commitment detection</li>
+          <li>Suggested next actions</li>
+        </ul>
+      </article>
 
-          <article class="pricing-card popular fade-up">
-            <div class="popular-badge">Most popular</div>
-            <div class="tier">Professional</div>
-            <h3>Founding $49.99/month</h3>
-            <div class="price">$49.99<small>Was $97/month</small></div>
-            <ul>
-              <li>Everything in Starter</li>
-              <li>Multiple email accounts</li>
-              <li>Calendar cross-referencing</li>
-              <li>Pattern detection dashboard</li>
-              <li>Priority support</li>
-            </ul>
-          </article>
+      <article class="pricing-card popular fade-up">
+        <div class="popular-badge">Most popular</div>
+        <div class="tier">Professional</div>
+        <h3>Founding $49.99/month</h3>
+        <div class="price">$49.99<small>Was $97/month</small></div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Multiple email accounts</li>
+          <li>Calendar cross-referencing</li>
+          <li>Suggested replies</li>
+          <li>Advanced dashboard views</li>
+        </ul>
+      </article>
 
-          <!-- DFY tier: consider removing from waitlist page once GTM is validated -->
-          <article class="pricing-card fade-up">
-            <div class="tier">DFY Setup</div>
-            <h3>$500 setup + $297/month</h3>
-            <div class="price">$500 + $297<small>For teams and agencies</small></div>
-            <ul>
-              <li>We configure everything for you</li>
-              <li>Custom briefing rules</li>
-              <li>Onboarding call included</li>
-              <li>For teams and agencies</li>
-            </ul>
-            <p class="dfy-note">Not on the waitlist page to confuse solo users. This tier is invite-only.</p>
-          </article>
-        </div>
+      <article class="pricing-card fade-up">
+        <div class="tier">Team pilot</div>
+        <h3>Invite-only</h3>
+        <div class="price">Custom<small>For small teams validating Trackt together</small></div>
+        <ul>
+          <li>Shared rollout planning</li>
+          <li>Team onboarding support</li>
+          <li>Priority feedback loop with Aaryx AI</li>
+          <li>Access before broader release</li>
+        </ul>
+      </article>
+    </div>
 
-        <p class="pricing-footnote fade-up">Founding prices lock in forever. Regular pricing returns after the first 100.</p>
-        <p class="pricing-sub fade-up">No credit card required to join the waitlist.</p>
-      </div>
-    </section>
+    <p class="pricing-footnote fade-up">Founding prices lock in forever. Team pilots stay limited while the product is validated.</p>
+    <p class="pricing-sub fade-up">No credit card required to join the waitlist.</p>
+  </div>
+</section>
 
     <section class="section" id="waitlist">
       <div class="container waitlist-shell">
@@ -1349,21 +1568,21 @@
             <p>Founding prices. Forever. No credit card required.</p>
           </div>
 
-          <div class="waitlist-points">
-            <div class="waitlist-point">
-              <strong>You said it. Trackt caught it.</strong>
-              The point isn't more notifications. It's waking up with a clean picture of what matters.
-            </div>
-            <div class="waitlist-point">
-              <strong>Built for morning clarity.</strong>
-              Before the inbox chaos starts, Trackt gives you the commitments, deadlines, and follow-ups you can't afford to miss.
-            </div>
-            <div class="waitlist-point">
-              <strong>Founding pricing is limited.</strong>
-              First 100 members lock it in for life.
-            </div>
-          </div>
-        </div>
+            <div class="waitlist-points">
+    <div class="waitlist-point">
+      <strong>See communication risk before it becomes relationship damage.</strong>
+      Trackt is built for people who do not need another task list. They need visibility into what is actually at risk.
+    </div>
+    <div class="waitlist-point">
+      <strong>Founding members shape the product.</strong>
+      Early users will directly influence the dashboard, the reply layer, and the confidence system.
+    </div>
+    <div class="waitlist-point">
+      <strong>Founding pricing is limited.</strong>
+      First 100 members lock it in for life.
+    </div>
+  </div>
+</div>
 
         <div class="form-shell fade-up">
           <form id="waitlistForm" action="https://formspree.io/f/mkolopaa" method="POST" novalidate>
@@ -1403,21 +1622,21 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-copy">
-        <div class="logo">Trackt</div>
-        <div class="footer-tagline">Every morning. Everything that matters.</div>
-        <div class="footer-meta">© 2026 Aaryx AI. All rights reserved.</div>
-        <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
-      </div>
-
-      <div class="footer-links" aria-label="Footer links">
-        <a href="privacy.html">Privacy Policy</a>
-        <span>|</span>
-        <a href="terms.html">Terms</a>
-      </div>
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      <img class="footer-logo" src="assets/trackt_horizontal_dark.svg" onerror="this.onerror=null;this.src='assets/trackt_horizontal_dark.png';" alt="Trackt" />
+      <div class="footer-tagline">Every commitment. Every risk. One view.</div>
+      <div class="footer-meta">Built by Aaryx AI. © 2026. All rights reserved.</div>
+      <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
     </div>
-  </footer>
+
+    <div class="footer-links" aria-label="Footer links">
+      <a href="privacy.html">Privacy Policy</a>
+      <span>|</span>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
