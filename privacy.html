@@ -64,12 +64,16 @@
       gap: 16px;
     }
 
-    .logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.05em;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+    }
+
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
     }
 
     .btn {
@@ -312,7 +316,13 @@
       gap: 18px 24px;
     }
 
-    .footer-copy { display: grid; gap: 6px; }
+    .footer-copy { display: grid; gap: 10px; }
+
+    .footer-logo {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
 
     .footer-tagline,
     .footer-meta { color: var(--muted); font-size: 0.94rem; }
@@ -351,7 +361,9 @@
 
   <header class="site-header">
     <div class="container nav-inner">
-      <a class="logo" href="index.html">Trackt</a>
+      <a class="brand" href="index.html" aria-label="Trackt home">
+        <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
+      </a>
       <a class="btn btn-primary" href="index.html#waitlist">Join Waitlist</a>
     </div>
   </header>
@@ -558,11 +570,12 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-copy">
-        <div class="logo">Trackt</div>
+        <img class="footer-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
         <div class="footer-tagline">Every morning. Everything that matters.</div>
         <div class="footer-meta">© 2026 Aaryx AI. All rights reserved.</div>
         <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
       </div>
+
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <span>|</span>

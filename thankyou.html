@@ -58,12 +58,16 @@
       justify-content: space-between;
     }
 
-    .logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.05em;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+    }
+
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
     }
 
     /* MAIN */
@@ -273,6 +277,17 @@
       font-size: 0.9rem;
     }
 
+    .footer-copy {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-logo {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
     .footer-links {
       display: flex;
       gap: 12px;
@@ -290,7 +305,9 @@
 
   <header class="site-header">
     <div class="nav-inner">
-      <a class="logo" href="index.html">Trackt</a>
+      <a class="brand" href="index.html" aria-label="Trackt home">
+        <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
+      </a>
     </div>
   </header>
 
@@ -348,7 +365,10 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span>© 2026 Aaryx AI. All rights reserved.</span>
+      <div class="footer-copy">
+        <img class="footer-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
+        <span>© 2026 Aaryx AI. All rights reserved.</span>
+      </div>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <span>|</span>
