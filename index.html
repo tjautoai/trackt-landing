@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trackt | Every commitment. Every risk. One view.</title>
+  <title>Trackt | Operational Follow-Through Intelligence</title>
   <meta
     name="description"
-    content="Trackt is a communication risk intelligence platform that surfaces broken promises, missed follow-ups, unanswered questions, and deadlines before the relationship takes the hit."
+    content="Trackt gives relationship-driven businesses calm visibility into commitments at risk, missed follow-through, unanswered questions, and the next move that protects trust."
   />
-  <meta property="og:title" content="Trackt | Every commitment. Every risk. One view." />
+  <meta property="og:title" content="Trackt | Operational Follow-Through Intelligence" />
   <meta
     property="og:description"
-    content="Trackt gives professionals one live view of communication risk across commitments, follow-ups, unanswered questions, and deadlines."
+    content="See which commitments, relationships, and opportunities need attention before they become business damage."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://usetrackt.app" />
@@ -24,23 +24,32 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
     :root {
-  --bg: #0a0e1a;
-  --surface: #101726;
-  --surface-2: #111b2d;
-  --surface-3: #0d1524;
-  --border: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(0, 212, 200, 0.32);
-  --primary: #00d4c8;
-  --primary-2: #12e6db;
-  --secondary: #3b6af5;
-  --text: #ffffff;
-  --muted: #9fb0c6;
-  --shadow: 0 24px 72px rgba(0, 0, 0, 0.38);
-  --radius: 20px;
-  --radius-sm: 14px;
-  --max: 1220px;
-  --nav-h: 88px;
-}
+      --bg: #0a0e1a;
+      --bg-soft: #0d1322;
+      --surface: rgba(16, 23, 38, 0.88);
+      --surface-strong: rgba(18, 27, 45, 0.96);
+      --surface-muted: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --primary: #00d4c8;
+      --primary-2: #12e6db;
+      --secondary: #3b6af5;
+      --secondary-soft: rgba(59, 106, 245, 0.16);
+      --text: #ffffff;
+      --muted: #9fb0c6;
+      --muted-strong: #d9e5f6;
+      --danger: #ff6b7f;
+      --danger-soft: rgba(255, 107, 127, 0.16);
+      --warning: #ffbf69;
+      --warning-soft: rgba(255, 191, 105, 0.15);
+      --success: #8ef6ea;
+      --success-soft: rgba(0, 212, 200, 0.14);
+      --shadow: 0 24px 72px rgba(0, 0, 0, 0.38);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1220px;
+      --nav-h: 84px;
+    }
 
     * {
       box-sizing: border-box;
@@ -48,16 +57,17 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 18px);
     }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(59, 106, 245, 0.16), transparent 24%),
-        radial-gradient(circle at 14% 18%, rgba(0, 212, 200, 0.12), transparent 20%),
+        radial-gradient(circle at top right, rgba(59, 106, 245, 0.16), transparent 26%),
+        radial-gradient(circle at 12% 18%, rgba(0, 212, 200, 0.11), transparent 20%),
         radial-gradient(circle at 50% 100%, rgba(0, 153, 168, 0.08), transparent 28%),
-        var(--bg);
+        linear-gradient(180deg, #09101d 0%, #0a0e1a 100%);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -77,8 +87,13 @@
 
     button,
     input,
-    select {
+    select,
+    textarea {
       font: inherit;
+    }
+
+    button {
+      color: inherit;
     }
 
     .container {
@@ -90,26 +105,12 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--secondary);
       margin-bottom: 18px;
-    }
-
-    .eyebrow-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(0, 212, 170, 0.1);
       color: var(--secondary);
       font-family: 'Space Mono', monospace;
       font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 18px;
     }
 
     .eyebrow::before {
@@ -121,7 +122,7 @@
     }
 
     .section {
-      padding: 84px 0;
+      padding: 88px 0;
     }
 
     .section-header {
@@ -132,23 +133,24 @@
     .section-header h2 {
       margin: 0;
       font-family: 'Space Mono', monospace;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 4vw, 3.1rem);
       line-height: 1.08;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
     }
 
     .section-header p {
       margin: 14px 0 0;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.04rem;
+      max-width: 68ch;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 60;
       backdrop-filter: blur(14px);
-      background: rgba(10, 10, 10, 0.76);
+      background: rgba(7, 11, 20, 0.78);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -161,21 +163,15 @@
     }
 
     .brand {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-}
-
-.brand-logo {
-  height: 46px;
-  width: auto;
-  object-fit: contain;
-}
-
-    .nav-actions {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      min-height: 40px;
+    }
+
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
     }
 
     .nav-menu {
@@ -187,8 +183,18 @@
     }
 
     .nav-menu a:hover,
-    .nav-menu a:focus-visible {
+    .nav-menu a:focus-visible,
+    .footer-links a:hover,
+    .footer-links a:focus-visible,
+    .footer-site-link:hover,
+    .footer-site-link:focus-visible {
       color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .menu-toggle {
@@ -198,7 +204,6 @@
       border-radius: 12px;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.02);
-      color: var(--text);
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -249,9 +254,9 @@
       border-radius: 999px;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
       font-family: 'Space Mono', monospace;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       letter-spacing: -0.02em;
       white-space: nowrap;
     }
@@ -263,7 +268,7 @@
 
     .btn-primary {
       background: linear-gradient(180deg, var(--primary-2), var(--primary));
-      color: var(--text);
+      color: var(--bg);
       box-shadow: 0 12px 28px rgba(0, 212, 200, 0.22);
     }
 
@@ -280,46 +285,46 @@
 
     .btn-ghost:hover,
     .btn-ghost:focus-visible {
-      border-color: rgba(255, 255, 255, 0.28);
+      border-color: rgba(255, 255, 255, 0.26);
       background: rgba(255, 255, 255, 0.03);
     }
 
     .hero {
-      padding: 48px 0 72px;
+      padding: 52px 0 80px;
       overflow: clip;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 32px;
+      grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
+      gap: 34px;
       align-items: center;
     }
 
     .hero-copy h1 {
       margin: 0;
+      max-width: 12ch;
       font-family: 'Space Mono', monospace;
       font-size: clamp(2.8rem, 6vw, 5rem);
       line-height: 0.96;
       letter-spacing: -0.06em;
-      max-width: 10ch;
     }
 
     .hero-copy p {
       margin: 20px 0 0;
-      max-width: 660px;
+      max-width: 62ch;
       color: var(--muted);
-      font-size: clamp(1rem, 1.5vw, 1.14rem);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
     }
 
-    .hero-badges {
+    .hero-signals {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 22px;
     }
 
-    .hero-badge {
+    .signal-chip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -329,23 +334,31 @@
       background: rgba(255, 255, 255, 0.03);
       color: #dbe7ff;
       font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
-    .hero-badge::before {
+    .signal-chip::before {
       content: '';
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: currentColor;
-      opacity: 0.88;
+      opacity: 0.9;
     }
 
-    .hero-badge.at-risk { color: #9cc4ff; }
-    .hero-badge.needs { color: #7ef2e6; }
-    .hero-badge.waiting { color: #c5d2e8; }
+    .signal-chip.at-risk {
+      color: #ff8b9b;
+    }
+
+    .signal-chip.needs {
+      color: #8ef6ea;
+    }
+
+    .signal-chip.waiting {
+      color: #c7d5eb;
+    }
 
     .hero-actions {
       display: flex;
@@ -358,153 +371,35 @@
       margin-top: 18px;
       color: var(--muted);
       font-size: 0.95rem;
+      max-width: 60ch;
     }
 
-    .hero-visual {
-  position: relative;
-}
+    .hero-proofline {
+      margin-top: 20px;
+      display: grid;
+      gap: 10px;
+    }
 
-.dashboard-shell {
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(10, 14, 26, 0.98), rgba(15, 23, 38, 0.96));
-  padding: 18px;
-}
+    .proofline-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted-strong);
+      font-size: 0.94rem;
+    }
 
-.dashboard-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 16px;
-  color: var(--muted);
-  font-size: 0.84rem;
-}
+    .proofline-item::before {
+      content: '•';
+      color: var(--primary);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
 
-.dashboard-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #d9ecf3;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.dashboard-mark {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--primary-2), var(--primary));
-  box-shadow: 0 0 0 6px rgba(0, 212, 200, 0.08);
-}
-
-.dashboard-summary {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.summary-card {
-  padding: 14px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.summary-label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.76rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-family: 'Space Mono', monospace;
-}
-
-.summary-value {
-  display: block;
-  margin-top: 6px;
-  color: var(--text);
-  font-size: 1.32rem;
-  font-family: 'Space Mono', monospace;
-}
-
-.bucket-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.bucket-column {
-  padding: 14px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  min-height: 100%;
-}
-
-.bucket-label {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 10px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.bucket-label.at-risk { background: rgba(59, 106, 245, 0.12); color: #b7ceff; }
-.bucket-label.needs { background: rgba(0, 212, 200, 0.12); color: #8ff8ee; }
-.bucket-label.waiting { background: rgba(210, 218, 235, 0.1); color: #dbe5f5; }
-
-.bucket-item { display: grid; gap: 8px; }
-
-.bucket-item strong {
-  display: block;
-  line-height: 1.35;
-  font-size: 0.98rem;
-  color: var(--text);
-}
-
-.bucket-item p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-
-.confidence-row {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  color: #d7e0ee;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-family: 'Space Mono', monospace;
-}
-
-.reply-row {
-  margin-top: 16px;
-  padding: 12px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 212, 200, 0.16);
-  background: rgba(0, 212, 200, 0.08);
-  color: #e4fff9;
-  font-size: 0.88rem;
-}
-
-.hero-panel {
+    .hero-panel {
       position: relative;
-      background: linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.92));
+      background: linear-gradient(180deg, rgba(12, 18, 31, 0.98), rgba(11, 17, 28, 0.96));
       border: 1px solid var(--border);
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 22px;
       box-shadow: var(--shadow);
       overflow: hidden;
@@ -516,460 +411,623 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(0, 212, 200, 0.15), transparent 20%),
+        radial-gradient(circle at 18% 18%, rgba(0, 212, 200, 0.16), transparent 22%),
         radial-gradient(circle at 85% 10%, rgba(59, 106, 245, 0.2), transparent 24%);
       pointer-events: none;
       z-index: -1;
     }
 
-    .phone-shell {
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #0d0d0d;
-      padding: 16px;
-    }
-
-    .phone-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 16px;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .pulse-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: rgba(0, 212, 170, 0.09);
-      color: var(--secondary);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.74rem;
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--secondary);
-      box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.6);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.55); }
-      70% { box-shadow: 0 0 0 14px rgba(0, 212, 170, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 212, 170, 0); }
-    }
-
-    .briefing-card,
-    .snippet-card,
-    .step-card,
-    .detect-card,
-    .role-tile,
-    .pricing-card,
+    .dashboard-shell,
+    .cost-card,
+    .comparison-card,
+    .trust-card,
+    .founding-card,
+    .faq-item,
     .form-shell,
-    .proof-card {
-      background: linear-gradient(180deg, rgba(17, 17, 17, 0.98), rgba(13, 13, 13, 0.98));
+    .final-cta-shell,
+    .future-card,
+    .process-card {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.98), rgba(11, 17, 28, 0.96));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
-    .briefing-card {
+    .dashboard-shell {
       padding: 18px;
-      border-left: 4px solid var(--primary);
-      margin-bottom: 14px;
     }
 
-    .briefing-card:last-child {
-      margin-bottom: 0;
+    .dashboard-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.83rem;
     }
 
-    .briefing-card .label {
+    .dashboard-brand {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
+      gap: 10px;
+      color: #d9ecf3;
       font-family: 'Space Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--secondary);
-      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    .briefing-card h3,
-    .pricing-card h3,
-    .role-tile h3,
-    .step-card h3,
-    .detect-card h3,
-    .snippet-card h3 {
-      margin: 0;
-      font-size: 1.1rem;
-      line-height: 1.35;
+    .dashboard-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, var(--primary-2), var(--primary));
+      box-shadow: 0 0 0 6px rgba(0, 212, 200, 0.08);
     }
 
-    .briefing-card p,
-    .pricing-card p,
-    .role-tile p,
-    .step-card p,
-    .detect-card p,
-    .snippet-card p,
-    .proof-card p {
-      margin: 10px 0 0;
+    .dashboard-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .summary-card,
+    .bucket-column,
+    .detail-stack,
+    .timeline-step,
+    .waitlist-point,
+    .status-note,
+    .faq-answer,
+    .security-row,
+    .connector-chip {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+    }
+
+    .summary-card {
+      padding: 14px;
+    }
+
+    .summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .summary-value {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.28rem;
+      color: var(--text);
+    }
+
+    .bucket-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .bucket-column {
+      padding: 14px;
+    }
+
+    .bucket-label,
+    .confidence-pill,
+    .detail-pill,
+    .tab-button,
+    .trust-badge,
+    .status-badge,
+    .future-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+    }
+
+    .bucket-label.at-risk,
+    .tab-button[data-item='at-risk'].is-active,
+    .risk-label.at-risk {
+      background: var(--danger-soft);
+      color: #ffd7de;
+      border-color: rgba(255, 107, 127, 0.22);
+    }
+
+    .bucket-label.needs,
+    .tab-button[data-item='needs-attention'].is-active,
+    .risk-label.needs {
+      background: rgba(59, 106, 245, 0.14);
+      color: #d9e4ff;
+      border-color: rgba(59, 106, 245, 0.22);
+    }
+
+    .bucket-label.waiting,
+    .tab-button[data-item='waiting-on-others'].is-active,
+    .risk-label.waiting {
+      background: rgba(255, 255, 255, 0.07);
+      color: #e6edf9;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .bucket-item {
+      display: grid;
+      gap: 8px;
+    }
+
+    .bucket-item strong {
+      display: block;
+      line-height: 1.35;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .bucket-item p,
+    .detail-copy p,
+    .comparison-card p,
+    .cost-card p,
+    .future-card p,
+    .trust-card p,
+    .process-card p,
+    .founding-card p,
+    .waitlist-point p,
+    .faq-answer p,
+    .footer-tagline,
+    .footer-meta,
+    .footer-links,
+    .form-meta,
+    .status-note,
+    .connector-copy,
+    .timeline-step p {
+      margin: 0;
       color: var(--muted);
     }
 
-    .social-proof {
+    .confidence-row {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #d7e0ee;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .reply-row {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 212, 200, 0.16);
+      background: rgba(0, 212, 200, 0.08);
+      color: #e4fff9;
+      font-size: 0.88rem;
+    }
+
+    .subnav-proof {
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       background: rgba(255, 255, 255, 0.015);
     }
 
-    .social-proof .container {
-      min-height: 72px;
+    .subnav-proof .container {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #c8c8c8;
+      color: #c8d3e4;
       font-size: 0.98rem;
     }
 
-    .snippet-grid,
-    .steps-grid,
-    .detect-grid,
-    .roles-grid,
-    .pricing-grid {
+    .cost-grid,
+    .comparison-grid,
+    .trust-grid,
+    .future-grid,
+    .founding-grid,
+    .process-grid {
       display: grid;
       gap: 18px;
     }
 
-    .snippet-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .snippet-card {
-      padding: 22px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .snippet-card::after {
-      content: '';
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(59, 106, 245, 0.8), transparent);
-      opacity: 0.6;
-    }
-
-    .snippet-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 16px;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .snippet-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(59, 106, 245, 0.22);
-      color: #d8e1ff;
-      font-size: 0.74rem;
-      font-family: 'Space Mono', monospace;
-    }
-
-    .problem-line {
-      margin-top: 24px;
-      max-width: 760px;
-      color: #d8d8d8;
-      font-size: 1.08rem;
-    }
-
-    .steps-grid {
+    .cost-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .step-card {
-      padding: 24px;
-      min-height: 220px;
-      position: relative;
-    }
-
-    .step-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Mono', monospace;
-      color: var(--bg);
-      background: linear-gradient(180deg, #79f2d3, var(--secondary));
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
-
-    .detect-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: stretch;
-    }
-
-    .detect-card {
+    .cost-card,
+    .comparison-card,
+    .future-card,
+    .trust-card,
+    .process-card,
+    .founding-card {
       padding: 24px;
     }
 
-    .detect-card ul {
-      list-style: none;
-      margin: 18px 0 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .detect-card li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: #d8d8d8;
-    }
-
-    .detect-card li::before {
-      content: '✓';
-      color: var(--secondary);
-      font-family: 'Space Mono', monospace;
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
-
-    .magic-line {
-      margin-top: 20px;
-      font-size: 1.05rem;
-      color: #d9e7ff;
-    }
-
-    .mirror-wrap {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    .proof-card {
-      border-left: 4px solid var(--primary);
-      padding: 26px;
-      max-width: 820px;
-    }
-
-    .risk-title {
+    .stat-kicker,
+    .comparison-kicker,
+    .future-kicker,
+    .trust-kicker,
+    .process-kicker,
+    .founding-kicker {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(59, 106, 245, 0.12);
-      color: #dbe4ff;
+      margin-bottom: 14px;
+      color: var(--muted-strong);
       font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .proof-card h3 {
-      margin: 18px 0 14px;
-      font-size: clamp(1.25rem, 2vw, 1.5rem);
-      line-height: 1.4;
+    .cost-card h3,
+    .comparison-card h3,
+    .future-card h3,
+    .trust-card h3,
+    .process-card h3,
+    .founding-card h3,
+    .faq-question span {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
-    .proof-lines {
-      display: grid;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .proof-line-item {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: #d7d7d7;
-    }
-
-    .reply-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+    .cost-value {
       margin-top: 18px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      background: rgba(0, 212, 170, 0.08);
-      color: #dffef5;
-      border: 1px solid rgba(0, 212, 170, 0.16);
+      color: var(--text);
       font-family: 'Space Mono', monospace;
-      font-size: 0.86rem;
-    }
-
-    .roles-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .role-tile {
-      padding: 22px;
-      min-height: 196px;
-    }
-
-    .role-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(59, 106, 245, 0.12);
-      color: var(--primary-2);
-      margin-bottom: 16px;
-      font-size: 1.1rem;
-    }
-
-    .pricing-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: stretch;
-    }
-
-    .pricing-card {
-      padding: 26px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .pricing-card.popular {
-      border-color: rgba(59, 106, 245, 0.4);
-      box-shadow: 0 20px 50px rgba(59, 106, 245, 0.14);
-    }
-
-    .popular-badge {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(0, 212, 170, 0.1);
-      color: var(--secondary);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .tier {
-      color: #dfe7ff;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.84rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      margin-top: 12px;
-      font-family: 'Space Mono', monospace;
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      font-size: 1.6rem;
       line-height: 1.05;
     }
 
-    .price small {
+    .cost-value small {
       display: block;
       margin-top: 8px;
       color: var(--muted);
-      font-size: 0.9rem;
       font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
     }
 
-    .pricing-card ul {
+    .comparison-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .comparison-list,
+    .trust-list,
+    .future-list,
+    .founding-list,
+    .process-list {
       list-style: none;
       padding: 0;
-      margin: 24px 0 0;
+      margin: 18px 0 0;
       display: grid;
       gap: 12px;
-      color: #d9d9d9;
+      color: #dde6f6;
     }
 
-    .pricing-card li {
+    .comparison-list li,
+    .trust-list li,
+    .future-list li,
+    .founding-list li,
+    .process-list li {
       display: flex;
-      gap: 10px;
       align-items: flex-start;
+      gap: 10px;
     }
 
-    .pricing-card li::before {
+    .comparison-list li::before,
+    .trust-list li::before,
+    .future-list li::before,
+    .founding-list li::before,
+    .process-list li::before {
       content: '•';
-      color: var(--secondary);
-      font-size: 1.2rem;
+      color: var(--primary);
+      font-size: 1.12rem;
       line-height: 1;
       margin-top: 1px;
     }
 
-    .pricing-footnote {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .pricing-sub {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .waitlist-shell {
+    .proof-grid {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 22px;
       align-items: start;
+    }
+
+    .proof-surface,
+    .detail-surface {
+      background: linear-gradient(180deg, rgba(12, 18, 31, 0.98), rgba(11, 17, 28, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .proof-surface {
+      padding: 20px;
+    }
+
+    .proof-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .proof-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tab-button {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted-strong);
+      border-color: rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .tab-button:hover,
+    .tab-button:focus-visible {
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .proof-card-shell {
+      display: grid;
+      gap: 16px;
+    }
+
+    .risk-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .risk-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .risk-headline {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+    .risk-body {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .risk-row {
+      display: grid;
+      gap: 6px;
+    }
+
+    .risk-row strong {
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .risk-row span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .suggested-reply {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 212, 200, 0.16);
+      background: rgba(0, 212, 200, 0.08);
+    }
+
+    .suggested-reply strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #e8fffb;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .suggested-reply p {
+      margin: 0;
+      color: #dcfff8;
+      font-size: 0.94rem;
+    }
+
+    .detail-surface {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .detail-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-stack {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .detail-stack strong {
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .detail-stack span,
+    .detail-stack p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .detail-metric-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .future-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+      align-items: start;
+    }
+
+    .future-roadmap {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-step {
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .timeline-step strong {
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .connector-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-content: flex-start;
+    }
+
+    .connector-chip {
+      padding: 14px 16px;
+      min-width: 138px;
+    }
+
+    .connector-chip strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .connector-copy {
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .trust-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .trust-badge,
+    .future-badge,
+    .status-badge {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted-strong);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-flow {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .security-row,
+    .status-note {
+      padding: 16px;
+    }
+
+    .security-row strong,
+    .status-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .founding-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: start;
+    }
+
+    .waitlist-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .waitlist-point {
+      padding: 18px;
+    }
+
+    .waitlist-point strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .founding-value {
+      margin-top: 18px;
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 1.02rem;
     }
 
     .form-shell {
       padding: 28px;
     }
 
-    .waitlist-points {
-      display: grid;
-      gap: 14px;
+    .form-heading {
+      margin: 0 0 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1.1rem;
+      color: #dfe7ff;
+      letter-spacing: -0.02em;
     }
 
-    .waitlist-point {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .waitlist-point strong {
-      display: block;
-      margin-bottom: 6px;
+    .form-subhead {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .form-grid {
       display: grid;
       gap: 16px;
-    }
-
-    .form-heading {
-      margin: 0 0 20px;
-      font-family: 'Space Mono', monospace;
-      font-size: 1.1rem;
-      color: #dfe7ff;
-      letter-spacing: -0.02em;
     }
 
     .field {
@@ -984,20 +1042,28 @@
     }
 
     .field input,
-    .field select {
+    .field select,
+    .field textarea {
       width: 100%;
       min-height: 52px;
       border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      background: #0d0d0d;
+      background: #0d1322;
       color: var(--text);
       padding: 0 16px;
       outline: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
+    .field textarea {
+      min-height: 132px;
+      padding: 14px 16px;
+      resize: vertical;
+    }
+
     .field input:focus,
-    .field select:focus {
+    .field select:focus,
+    .field textarea:focus {
       border-color: rgba(59, 106, 245, 0.8);
       box-shadow: 0 0 0 4px rgba(59, 106, 245, 0.14);
     }
@@ -1009,7 +1075,6 @@
 
     .form-meta {
       margin-top: 14px;
-      color: var(--muted);
       font-size: 0.92rem;
     }
 
@@ -1033,6 +1098,91 @@
       background: rgba(255, 91, 91, 0.08);
       border: 1px solid rgba(255, 91, 91, 0.2);
       color: #ffdede;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px 24px;
+      border: 0;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question:hover,
+    .faq-question:focus-visible {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .faq-icon {
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-strong);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .faq-answer {
+      margin: 0 22px 22px;
+      padding: 0 18px 18px;
+      display: none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .faq-item.is-open .faq-answer {
+      display: block;
+    }
+
+    .faq-answer p + p {
+      margin-top: 12px;
+    }
+
+    .final-cta-shell {
+      padding: 34px;
+      display: grid;
+      gap: 16px;
+      align-items: center;
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .final-cta-copy h2 {
+      margin: 0;
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .final-cta-copy p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 62ch;
     }
 
     .site-footer {
@@ -1060,36 +1210,16 @@
       object-fit: contain;
     }
 
-    .footer-tagline,
-    .footer-meta,
-    .footer-links {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
     .footer-site-link {
       color: var(--primary);
       font-size: 0.94rem;
-    }
-
-    .footer-site-link:hover,
-    .footer-site-link:focus-visible {
-      color: var(--primary-2);
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-    }
-
-    .footer-links a:hover,
-    .footer-links a:focus-visible {
-      color: var(--text);
-    }
-
-    .dfy-note {
-      display: none;
+      font-size: 0.94rem;
     }
 
     .fade-up {
@@ -1104,25 +1234,26 @@
     }
 
     @media (max-width: 1279px) {
-      .roles-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .proof-grid,
+      .future-grid,
+      .founding-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .cost-grid,
+      .trust-grid,
+      .trust-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .hero-grid,
-      .waitlist-shell {
+      .comparison-grid {
         grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 920px) {
-      .steps-grid,
-      .pricing-grid,
-      .snippet-grid,
-      .detect-grid,
-      .roles-grid {
-        grid-template-columns: 1fr;
-      }
-
       .section {
         padding: 72px 0;
       }
@@ -1136,7 +1267,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 16px;
-        background: rgba(17, 17, 17, 0.98);
+        background: rgba(12, 18, 31, 0.995);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 18px;
         box-shadow: var(--shadow);
@@ -1153,6 +1284,21 @@
       .nav-actions .btn {
         display: none;
       }
+
+      .hero-grid,
+      .dashboard-summary,
+      .bucket-grid,
+      .detail-metric-row,
+      .cost-grid,
+      .trust-grid,
+      .trust-flow,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .final-cta-shell {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1161,25 +1307,24 @@
       }
 
       .hero {
-        padding-top: 32px;
+        padding-top: 34px;
       }
 
       .hero-copy h1 {
-        max-width: 10ch;
+        max-width: 11ch;
       }
 
-      .dashboard-summary,
-      .bucket-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .proof-card,
+      .cost-card,
+      .comparison-card,
+      .future-card,
+      .trust-card,
+      .process-card,
+      .founding-card,
       .form-shell,
-      .pricing-card,
-      .step-card,
-      .snippet-card,
-      .role-tile,
-      .detect-card {
+      .proof-surface,
+      .detail-surface,
+      .dashboard-shell,
+      .final-cta-shell {
         padding: 22px;
       }
 
@@ -1194,399 +1339,525 @@
       }
 
       .hero-actions .btn,
+      .btn,
+      .form-submit,
       .nav-actions,
       .btn-mobile-full {
         width: 100%;
       }
 
-      .btn,
-      .hero-actions .btn,
-      .nav-actions .btn,
-      .form-submit {
-        width: 100%;
-      }
-
-      .roles-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .role-tile {
-        min-height: 0;
-      }
-
-      .social-proof .container {
+      .subnav-proof .container {
         min-height: auto;
         padding: 18px 0;
+      }
+
+      .faq-question {
+        padding: 20px 18px;
+      }
+
+      .faq-answer {
+        margin: 0 18px 18px;
+        padding: 0 16px 16px;
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-  <div class="container nav-inner">
-    <a class="brand" href="#top" aria-label="Trackt home">
-      <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
-    </a>
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Trackt home">
+        <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
+      </a>
 
-    <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
-      <a href="#problem">Problem</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#detects">Signals</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#waitlist">Waitlist</a>
-    </nav>
+      <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+        <a href="#cost">Cost</a>
+        <a href="#signals">Signals</a>
+        <a href="#proof">Proof</a>
+        <a href="#trust">Trust</a>
+        <a href="#faq">FAQ</a>
+        <a href="#founding">Founding Access</a>
+      </nav>
 
-    <div class="nav-actions">
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
-        <span></span>
-      </button>
-      <a class="btn btn-primary" href="#waitlist">Get Early Access</a>
+      <div class="nav-actions">
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+          <span></span>
+        </button>
+        <a class="btn btn-primary" href="#founding">Get Founding Access</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main id="top">
     <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy fade-up">
-      <div class="eyebrow">Communication risk intelligence</div>
-      <h1>Every commitment. Every risk. One view.</h1>
-      <p>
-        Trackt watches Gmail threads and calendar context to surface broken promises, missed follow-ups, unanswered questions, and deadlines before the relationship takes the hit.
-      </p>
-      <div class="hero-badges" aria-label="Trackt dashboard buckets">
-        <span class="hero-badge at-risk">At Risk</span>
-        <span class="hero-badge needs">Needs Attention</span>
-        <span class="hero-badge waiting">Waiting on Others</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
-        <a class="btn btn-ghost" href="#how-it-works">See How It Works</a>
-      </div>
-      <div class="hero-note">First 100 members lock in founding pricing and shape what gets built next.</div>
-    </div>
+      <div class="container hero-grid">
+        <div class="hero-copy fade-up">
+          <div class="eyebrow">Operational Follow-Through Intelligence</div>
+          <h1>Calm control over commitments at risk.</h1>
+          <p>
+            Trackt helps relationship-driven businesses see which follow-through gaps, unanswered questions, and buried commitments are quietly moving toward trust damage before the business feels the consequence.
+          </p>
 
-    <div class="hero-visual fade-up">
-      <div class="hero-panel">
-        <div class="dashboard-shell" aria-label="Trackt risk dashboard preview">
-          <div class="dashboard-top">
-            <div class="dashboard-brand"><span class="dashboard-mark" aria-hidden="true"></span><span>Trackt control tower</span></div>
-            <span>Live relationship risk view</span>
+          <div class="hero-signals" aria-label="Trackt dashboard buckets">
+            <span class="signal-chip at-risk">At Risk</span>
+            <span class="signal-chip needs">Needs Attention</span>
+            <span class="signal-chip waiting">Waiting on Others</span>
           </div>
-          <div class="dashboard-summary">
-            <div class="summary-card">
-              <span class="summary-label">Active commitments</span>
-              <span class="summary-value">24</span>
-            </div>
-            <div class="summary-card">
-              <span class="summary-label">High-confidence risks</span>
-              <span class="summary-value">07</span>
-            </div>
-            <div class="summary-card">
-              <span class="summary-label">Suggested replies ready</span>
-              <span class="summary-value">11</span>
-            </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#founding">Get Founding Access</a>
+            <a class="btn btn-ghost" href="#proof">See Dashboard Proof</a>
           </div>
-          <div class="bucket-grid">
-            <div class="bucket-column">
-              <div class="bucket-label at-risk">At Risk</div>
-              <div class="bucket-item">
-                <strong>Proposal promised Friday. Still unsent.</strong>
-                <p>Client momentum is fading. Suggested reply ready now.</p>
-              </div>
-              <div class="confidence-row"><span>High confidence</span><span>Overdue</span></div>
-            </div>
-            <div class="bucket-column">
-              <div class="bucket-label needs">Needs Attention</div>
-              <div class="bucket-item">
-                <strong>Interview follow-up unanswered for 4 days.</strong>
-                <p>Candidate risk rising. Trackt suggests the next touch.</p>
-              </div>
-              <div class="confidence-row"><span>Medium confidence</span><span>Urgent</span></div>
-            </div>
-            <div class="bucket-column">
-              <div class="bucket-label waiting">Waiting on Others</div>
-              <div class="bucket-item">
-                <strong>Vendor promised revised timeline by Tuesday.</strong>
-                <p>Follow-up window opens tomorrow morning.</p>
-              </div>
-              <div class="confidence-row"><span>High confidence</span><span>Waiting</span></div>
-            </div>
+
+          <div class="hero-note">
+            Built for operators whose revenue depends on trust, timing, and follow-through. No CRM migration. No credit card required.
           </div>
-          <div class="reply-row">Suggested next move: own the miss quickly, reset expectations, and send the contextual reply before the other side has to ask.</div>
+
+          <div class="hero-proofline" aria-label="Trackt hero proof points">
+            <div class="proofline-item">See what happened.</div>
+            <div class="proofline-item">Understand why it matters.</div>
+            <div class="proofline-item">Get the next move and confidence level in one view.</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-    <section class="social-proof">
-      <div class="container">
-        Built for professionals whose revenue depends on trust, timing, and follow-through across email.
+        <div class="hero-visual fade-up">
+          <div class="hero-panel">
+            <div class="dashboard-shell" aria-label="Trackt dashboard preview">
+              <div class="dashboard-top">
+                <div class="dashboard-brand"><span class="dashboard-mark" aria-hidden="true"></span><span>Trackt control tower</span></div>
+                <span>Relationship risk view</span>
+              </div>
+
+              <div class="dashboard-summary">
+                <div class="summary-card">
+                  <span class="summary-label">Commitments monitored</span>
+                  <span class="summary-value">24</span>
+                </div>
+                <div class="summary-card">
+                  <span class="summary-label">Needs action now</span>
+                  <span class="summary-value">07</span>
+                </div>
+                <div class="summary-card">
+                  <span class="summary-label">Replies prepared</span>
+                  <span class="summary-value">11</span>
+                </div>
+              </div>
+
+              <div class="bucket-grid">
+                <div class="bucket-column">
+                  <div class="bucket-label at-risk">At Risk</div>
+                  <div class="bucket-item">
+                    <strong>Revised proposal promised Friday. Still unsent.</strong>
+                    <p>Trackt flags the missed commitment, the client exposed to it, and the reply to send now.</p>
+                  </div>
+                  <div class="confidence-row"><span>High confidence</span><span>Overdue</span></div>
+                </div>
+
+                <div class="bucket-column">
+                  <div class="bucket-label needs">Needs Attention</div>
+                  <div class="bucket-item">
+                    <strong>Question from buyer's agent unanswered for 2 days.</strong>
+                    <p>The thread is cooling. Action still protects the relationship.</p>
+                  </div>
+                  <div class="confidence-row"><span>Medium confidence</span><span>Urgent</span></div>
+                </div>
+
+                <div class="bucket-column">
+                  <div class="bucket-label waiting">Waiting on Others</div>
+                  <div class="bucket-item">
+                    <strong>Lender promised updated estimate by Tuesday.</strong>
+                    <p>Trackt recommends the right follow-up timing before the handoff stalls.</p>
+                  </div>
+                  <div class="confidence-row"><span>High confidence</span><span>Waiting</span></div>
+                </div>
+              </div>
+
+              <div class="reply-row">Suggested next move: acknowledge the miss quickly, reset the expectation, and send the contextual reply before the other side has to ask again.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="problem">
+    <section class="subnav-proof">
       <div class="container">
-        <div class="section-header fade-up">
-          <div class="eyebrow">Sound familiar?</div>
-          <h2>Relationship risk is already sitting inside your inbox.</h2>
-        </div>
-
-        <div class="snippet-grid">
-          <article class="snippet-card fade-up">
-            <div class="snippet-meta">
-              <span class="snippet-pill">Promise made</span>
-              <span>6 days ago</span>
-            </div>
-            <h3>“I'll send the proposal by Friday”</h3>
-            <p>No action taken.</p>
-          </article>
-
-          <article class="snippet-card fade-up">
-            <div class="snippet-meta">
-              <span class="snippet-pill">Follow-up missed</span>
-              <span>4 days ago</span>
-            </div>
-            <h3>“Following up on your interview feedback”</h3>
-            <p>No reply.</p>
-          </article>
-
-          <article class="snippet-card fade-up">
-            <div class="snippet-meta">
-              <span class="snippet-pill">Calendar risk</span>
-              <span>Tomorrow</span>
-            </div>
-            <h3>“Just a reminder about our meeting tomorrow”</h3>
-            <p>Never sent.</p>
-          </article>
-        </div>
-
-        <p class="problem-line fade-up">Trackt turns invisible communication leakage into a visible, prioritized action queue.</p>
+        Trackt is not another inbox tool. It is a calm operating layer for commitment awareness, relationship risk visibility, and follow-through control.
       </div>
     </section>
 
-    <section class="section" id="how-it-works">
+    <section class="section" id="cost">
       <div class="container">
         <div class="section-header fade-up">
-          <div class="eyebrow">How it works</div>
-          <h2>Simple setup. High-leverage visibility.</h2>
+          <div class="eyebrow">The Hidden Cost of Missed Commitments</div>
+          <h2>The damage rarely starts with a lost deal. It starts with one missed moment.</h2>
+          <p>
+            A promised follow-up slips. A client question sits too long. A handoff stalls inside a thread. The problem is not email volume. The problem is invisible business consequence.
+          </p>
         </div>
 
-        <div class="steps-grid">
-          <article class="step-card fade-up">
-            <div class="step-number">01</div>
-            <h3>Connect Gmail</h3>
-            <p>Secure account connection. No CRM migration. No manual entry.</p>
+        <div class="cost-grid">
+          <article class="cost-card fade-up">
+            <div class="stat-kicker">Trust erosion</div>
+            <h3>You looked less reliable than you really are.</h3>
+            <p>Most relationship damage comes from silence, delay, and forgotten follow-through. Not from bad intent.</p>
+            <div class="cost-value">Quiet damage<small>Clients feel it before the business measures it.</small></div>
           </article>
 
-          <article class="step-card fade-up">
-            <div class="step-number">02</div>
-            <h3>Trackt scans threads and commitments</h3>
-            <p>Email language, unanswered questions, deadlines, and follow-up gaps get translated into risk.</p>
+          <article class="cost-card fade-up">
+            <div class="stat-kicker">Revenue leakage</div>
+            <h3>Opportunities cool while nobody sees the risk forming.</h3>
+            <p>Deals do not always disappear with a clear signal. They often decay because the next action never happened.</p>
+            <div class="cost-value">Slipped momentum<small>Late follow-up turns active opportunity into guesswork.</small></div>
           </article>
 
-          <article class="step-card fade-up">
-            <div class="step-number">03</div>
-            <h3>See one dashboard</h3>
-            <p>At Risk, Needs Attention, and Waiting on Others keep urgency obvious without becoming another inbox.</p>
+          <article class="cost-card fade-up">
+            <div class="stat-kicker">Mental overhead</div>
+            <h3>Your head becomes the system.</h3>
+            <p>When follow-through lives in memory, every thread feels urgent and nothing feels confidently handled.</p>
+            <div class="cost-value">Operational drag<small>Too much energy goes to remembering instead of moving.</small></div>
           </article>
 
-          <article class="step-card fade-up">
-            <div class="step-number">04</div>
-            <h3>Take the next move fast</h3>
-            <p>Copy the contextual suggested reply, follow up, or resolve the risk in one motion.</p>
+          <article class="cost-card fade-up">
+            <div class="stat-kicker">Control loss</div>
+            <h3>The team reacts late because no one had the full picture.</h3>
+            <p>Without one view of commitments at risk, important work stays fragmented across people, inboxes, and assumptions.</p>
+            <div class="cost-value">Blind spots<small>Small misses compound into avoidable relationship damage.</small></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="detects">
+    <section class="section" id="signals">
       <div class="container">
         <div class="section-header fade-up">
-          <div class="eyebrow">What Trackt detects</div>
-          <h2>Trackt shows what is on fire and what can still be saved.</h2>
+          <div class="eyebrow">What Trackt Sees That Other Tools Miss</div>
+          <h2>Most tools organize communication. Trackt interprets business consequence.</h2>
+          <p>
+            The difference is not more reminders or cleaner folders. The difference is understanding what happened, why it matters to the relationship, and what action protects the outcome now.
+          </p>
         </div>
 
-        <div class="detect-grid">
-          <article class="detect-card fade-up">
-            <h3>Thread intelligence</h3>
-            <ul>
-              <li>Broken promises</li>
-              <li>Questions left unanswered</li>
-              <li>Follow-ups going cold</li>
-              <li>Deadlines approaching or overdue</li>
-              <li>Relationship temperature dropping</li>
+        <div class="comparison-grid">
+          <article class="comparison-card fade-up">
+            <div class="comparison-kicker">Not a reminder layer</div>
+            <h3>Trackt detects the commitment you forgot to set a reminder for.</h3>
+            <p>Manual reminder tools depend on perfect human setup. Trackt reads the signal already buried in real communication.</p>
+            <ul class="comparison-list">
+              <li>Broken promises surfaced automatically</li>
+              <li>Questions left unanswered flagged in context</li>
+              <li>Cold follow-up spotted before it becomes a write-off</li>
             </ul>
           </article>
 
-          <article class="detect-card fade-up">
-            <h3>Time and context signals</h3>
-            <ul>
-              <li>Meeting prep that never happened</li>
-              <li>Post-meeting actions still unsent</li>
-              <li>Renewals and check-ins approaching</li>
-              <li>Waiting-on-others follow-up timing</li>
+          <article class="comparison-card fade-up">
+            <div class="comparison-kicker">Not a CRM replacement</div>
+            <h3>Trackt works with the workflow you already have.</h3>
+            <p>CRMs store records. Trackt highlights live follow-through risk. It gives you awareness without forcing a migration project.</p>
+            <ul class="comparison-list">
+              <li>No new pipeline to maintain</li>
+              <li>No manual task creation required</li>
+              <li>No duplicate data-entry loop</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card fade-up">
+            <div class="comparison-kicker">Not inbox cleanup</div>
+            <h3>Trackt is about commitments, not clutter.</h3>
+            <p>It does not try to make you feel organized. It helps you stay ahead of the moments that affect trust, timing, and revenue.</p>
+            <ul class="comparison-list">
+              <li>Risk level visible on every surfaced item</li>
+              <li>Confidence level visible before you act</li>
+              <li>Suggested reply grounded in the actual thread</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Interactive Product / Dashboard Proof</div>
+          <h2>The product proof is simple. You can see what happened, why it matters, and what Trackt recommends.</h2>
+          <p>
+            The dashboard is the wedge. It turns scattered communication into one calm control view built around urgency, relationship impact, and the next move.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-surface fade-up">
+            <div class="proof-topbar">
+              <span>Live item preview</span>
+              <span>Confidence visible on every detection</span>
+            </div>
+
+            <div class="proof-tabs" role="tablist" aria-label="Trackt proof scenarios">
+              <button class="tab-button is-active" type="button" data-item="at-risk" role="tab" aria-selected="true">At Risk</button>
+              <button class="tab-button" type="button" data-item="needs-attention" role="tab" aria-selected="false">Needs Attention</button>
+              <button class="tab-button" type="button" data-item="waiting-on-others" role="tab" aria-selected="false">Waiting on Others</button>
+            </div>
+
+            <div class="proof-card-shell">
+              <article class="risk-card" aria-live="polite">
+                <div class="risk-meta">
+                  <span class="risk-label bucket-label at-risk" id="proofStatus">At Risk</span>
+                  <span class="confidence-pill" id="proofConfidence">High confidence</span>
+                </div>
+
+                <h3 class="risk-headline" id="proofTitle">Revised proposal promised Friday. Still unsent.</h3>
+
+                <div class="risk-body">
+                  <div class="risk-row">
+                    <strong>What happened</strong>
+                    <span id="proofWhatHappened">A clear commitment was made in-thread and the promised follow-through never happened.</span>
+                  </div>
+
+                  <div class="risk-row">
+                    <strong>Why it matters</strong>
+                    <span id="proofWhyItMatters">The client is waiting on a deliverable tied directly to decision timing and confidence.</span>
+                  </div>
+
+                  <div class="risk-row">
+                    <strong>What Trackt recommends</strong>
+                    <span id="proofNextMove">Own the miss quickly, reset the expectation, and send the revised proposal update now.</span>
+                  </div>
+                </div>
+
+                <div class="suggested-reply">
+                  <strong>Suggested reply</strong>
+                  <p id="proofReply">Quick update. I missed the Friday timing I gave you and wanted to own that directly. I am finalizing the revision now and will have it in your inbox by 3 PM today.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="detail-surface fade-up">
+            <div class="detail-header">
+              <span class="detail-pill" id="detailPressure">Overdue</span>
+              <span class="detail-pill" id="detailImpact">Trust exposed</span>
+            </div>
+
+            <div class="detail-stack">
+              <strong>Detected evidence</strong>
+              <p id="detailEvidence">"I'll send the revised proposal by Friday so you can review before the weekend."</p>
+            </div>
+
+            <div class="detail-stack">
+              <strong>Affected relationship</strong>
+              <p id="detailRelationship">Sarah Mitchell. Prospect evaluating whether to move forward this week.</p>
+            </div>
+
+            <div class="detail-metric-row">
+              <div class="detail-stack">
+                <strong>Risk impact</strong>
+                <span id="detailRiskImpact">High</span>
+              </div>
+              <div class="detail-stack">
+                <strong>Time pressure</strong>
+                <span id="detailTimePressure">Today</span>
+              </div>
+            </div>
+
+            <div class="detail-stack">
+              <strong>Why this matters operationally</strong>
+              <p id="detailOperational">Trackt does not just point to a message. It frames the relationship risk and the business consequence so the right action is obvious.</p>
+            </div>
+
+            <div class="status-note">
+              <strong>Why the confidence level matters</strong>
+              Confidence scoring helps the user trust what the system surfaced. High confidence means the commitment signal is explicit. Medium confidence means the pattern likely needs attention but may benefit from human judgment.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="future">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Why Gmail Is Only the Beginning</div>
+          <h2>Trackt starts where commitments already live. It does not stop there.</h2>
+          <p>
+            Gmail is the first signal source because that is where many high-stakes follow-through moments already happen. It is the fastest place to prove the core problem. It is not the category and it is not the long-term ceiling.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <article class="future-card fade-up">
+            <div class="future-kicker">Why Gmail first</div>
+            <h3>It is the clearest place to make invisible risk visible.</h3>
+            <ul class="future-list">
+              <li>Business commitments are already buried in active threads</li>
+              <li>Questions, deadlines, and follow-through gaps are timestamped there</li>
+              <li>It proves the relationship-risk thesis before broader expansion</li>
+            </ul>
+
+            <div class="future-roadmap" style="margin-top: 22px;">
+              <div class="timeline-step">
+                <span class="future-badge">Today</span>
+                <strong>Email-based commitment awareness</strong>
+                <p>Start with the signal source that captures the most operational follow-through risk for the MVP.</p>
+              </div>
+              <div class="timeline-step">
+                <span class="future-badge">Next</span>
+                <strong>Calendar and adjacent workflow context</strong>
+                <p>Add more timing, handoff, and expectation data around the same relationships.</p>
+              </div>
+              <div class="timeline-step">
+                <span class="future-badge">Long term</span>
+                <strong>Operational control tower</strong>
+                <p>Expand across the systems that shape trust, timing, and accountability for service businesses.</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="connector-cloud fade-up" aria-label="Future Trackt signal sources">
+            <div class="connector-chip">
+              <strong>Gmail</strong>
+              <div class="connector-copy">First signal source for buried commitments.</div>
+            </div>
+            <div class="connector-chip">
+              <strong>Calendar</strong>
+              <div class="connector-copy">Meeting timing, prep risk, and missed follow-through windows.</div>
+            </div>
+            <div class="connector-chip">
+              <strong>Outlook</strong>
+              <div class="connector-copy">Expand the same intelligence across another major communication system.</div>
+            </div>
+            <div class="connector-chip">
+              <strong>CRM</strong>
+              <div class="connector-copy">Add pipeline context without turning Trackt into the CRM itself.</div>
+            </div>
+            <div class="connector-chip">
+              <strong>Meetings</strong>
+              <div class="connector-copy">Capture promises and unanswered actions discussed live.</div>
+            </div>
+            <div class="connector-chip">
+              <strong>Documents</strong>
+              <div class="connector-copy">Surface proposal, contract, and deliverable timing risk.</div>
+            </div>
+            <div class="connector-chip">
+              <strong>Phone + tasks</strong>
+              <div class="connector-copy">Complete the picture when commitments move outside email.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Trust &amp; Security</div>
+          <h2>Inbox access is a trust decision. The page should answer that clearly.</h2>
+          <p>
+            Trackt needs to earn trust before it earns access. That means plain-English expectations about privacy, security, workflow compatibility, and what actually happens after signup.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <article class="trust-card fade-up">
+            <div class="trust-kicker">Why Gmail first</div>
+            <h3>Because it is the fastest place to validate the operational risk model.</h3>
+            <p>Trackt begins with a high-signal communication source. It is not being positioned as a Gmail product and it is not limited to email long term.</p>
+            <ul class="trust-list">
+              <li>Signal-first, not platform-first</li>
+              <li>Built around commitments and consequence</li>
+              <li>Expandable by design</li>
+            </ul>
+          </article>
+
+          <article class="trust-card fade-up">
+            <div class="trust-kicker">Privacy</div>
+            <h3>The goal is risk visibility, not surveillance theater.</h3>
+            <p>At waitlist stage, Trackt only collects what you submit in the form. Any future account connection will require explicit authorization and clear disclosure.</p>
+            <ul class="trust-list">
+              <li>No credit card required to request access</li>
+              <li>No CRM migration needed</li>
+              <li>No hidden workflow disruption at signup</li>
+            </ul>
+          </article>
+
+          <article class="trust-card fade-up">
+            <div class="trust-kicker">Workflow fit</div>
+            <h3>Trackt is meant to sit beside your current workflow, not replace it.</h3>
+            <p>The operating value comes from awareness and action guidance. The goal is to reduce dropped balls without creating another system to maintain.</p>
+            <ul class="trust-list">
+              <li>Keep your existing tools</li>
+              <li>Use Trackt as the risk-control layer</li>
+              <li>Act from one clear dashboard</li>
             </ul>
           </article>
         </div>
 
-        <p class="magic-line fade-up">The product does not just report activity. It tells you what matters now, why it matters, and what to do next.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container mirror-wrap">
-        <div class="section-header fade-up">
-          <span class="eyebrow-pill">Real example</span>
-          <h2>Here is what Trackt surfaces before trust takes the hit.</h2>
-        </div>
-
-        <article class="proof-card fade-up" aria-label="Mock Trackt risk card">
-          <div class="risk-title">AT RISK</div>
-          <h3>You said: “I'll send the revised proposal by Friday so you can review before the weekend.”</h3>
-          <div class="proof-lines">
-            <div class="proof-line-item">The commitment was made clearly in-thread and never fulfilled.</div>
-            <div class="proof-line-item">Sarah Mitchell is still waiting. Relationship confidence is now eroding faster than the task itself.</div>
+        <div class="trust-flow">
+          <div class="security-row fade-up">
+            <span class="status-badge">1. Request access</span>
+            <strong>Join the founding list</strong>
+            Share your name, email, and role so Trackt can prioritize design partners and first-fit users.
           </div>
-          <div class="reply-pill">Suggested reply ready. Own the miss. Reset the expectation. Send before she has to ask again.</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header fade-up">
-          <div class="eyebrow">Who Trackt is built for</div>
-          <h2>Built for operators whose reputation and revenue depend on follow-through.</h2>
-        </div>
-
-        <div class="roles-grid">
-          <article class="role-tile fade-up">
-            <div class="role-icon">👥</div>
-            <h3>Independent Recruiters</h3>
-            <p>Every placement depends on follow-through.</p>
-          </article>
-
-          <article class="role-tile fade-up">
-            <div class="role-icon">📊</div>
-            <h3>Consultants</h3>
-            <p>Your reputation is your pipeline.</p>
-          </article>
-
-          <article class="role-tile fade-up">
-            <div class="role-icon">✍️</div>
-            <h3>Freelancers</h3>
-            <p>Miss a deadline, lose a client.</p>
-          </article>
-
-          <article class="role-tile fade-up">
-            <div class="role-icon">📈</div>
-            <h3>Financial Advisors</h3>
-            <p>Trust is built one follow-up at a time.</p>
-          </article>
-
-          <article class="role-tile fade-up">
-            <div class="role-icon">🏠</div>
-            <h3>Mortgage Brokers</h3>
-            <p>Deals die in your inbox.</p>
-          </article>
-
-          <article class="role-tile fade-up">
-            <div class="role-icon">⚖️</div>
-            <h3>Lawyers</h3>
-            <p>Every client expects you to remember everything.</p>
-          </article>
-
-          <article class="role-tile fade-up">
-            <div class="role-icon">🧾</div>
-            <h3>Accountants</h3>
-            <p>Tax season or not, clients need answers fast.</p>
-          </article>
+          <div class="security-row fade-up">
+            <span class="status-badge">2. Review fit</span>
+            <strong>Trackt prioritizes the right workflows first</strong>
+            Early access is for people and teams where missed follow-through creates real business consequence.
+          </div>
+          <div class="security-row fade-up">
+            <span class="status-badge">3. Connect intentionally</span>
+            <strong>Future account access will be explicit</strong>
+            When live integrations open, Trackt will explain what is accessed, why, and how the data is protected before authorization happens.
+          </div>
+          <div class="security-row fade-up">
+            <span class="status-badge">4. Operate with control</span>
+            <strong>Use the dashboard to act faster</strong>
+            You see what happened, why it matters, the confidence level, and the next move without changing your whole workflow.
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="pricing">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="eyebrow">Founding member pricing</div>
-      <h2>First 100 members lock in the founding rate forever.</h2>
-    </div>
-
-    <div class="pricing-grid">
-      <article class="pricing-card fade-up">
-        <div class="tier">Starter</div>
-        <h3>Founding $14.99/month</h3>
-        <div class="price">$14.99<small>Was $29/month</small></div>
-        <ul>
-          <li>1 Gmail account</li>
-          <li>Daily risk view</li>
-          <li>Core commitment detection</li>
-          <li>Suggested next actions</li>
-        </ul>
-      </article>
-
-      <article class="pricing-card popular fade-up">
-        <div class="popular-badge">Most popular</div>
-        <div class="tier">Professional</div>
-        <h3>Founding $49.99/month</h3>
-        <div class="price">$49.99<small>Was $97/month</small></div>
-        <ul>
-          <li>Everything in Starter</li>
-          <li>Multiple email accounts</li>
-          <li>Calendar cross-referencing</li>
-          <li>Suggested replies</li>
-          <li>Advanced dashboard views</li>
-        </ul>
-      </article>
-
-      <article class="pricing-card fade-up">
-        <div class="tier">Team pilot</div>
-        <h3>Invite-only</h3>
-        <div class="price">Custom<small>For small teams validating Trackt together</small></div>
-        <ul>
-          <li>Shared rollout planning</li>
-          <li>Team onboarding support</li>
-          <li>Priority feedback loop with Aaryx AI</li>
-          <li>Access before broader release</li>
-        </ul>
-      </article>
-    </div>
-
-    <p class="pricing-footnote fade-up">Founding prices lock in forever. Team pilots stay limited while the product is validated.</p>
-    <p class="pricing-sub fade-up">No credit card required to join the waitlist.</p>
-  </div>
-</section>
-
-    <section class="section" id="waitlist">
-      <div class="container waitlist-shell">
+    <section class="section" id="founding">
+      <div class="container founding-grid">
         <div class="fade-up">
           <div class="section-header">
-            <div class="eyebrow">Join the waitlist</div>
-            <h2>Be one of the first 100.</h2>
-            <p>Founding prices. Forever. No credit card required.</p>
+            <div class="eyebrow">Founding Access</div>
+            <h2>Get in early if this is already your problem.</h2>
+            <p>
+              Founding access is for operators who want calm operational control, a direct feedback loop, and first consideration for preferred launch pricing later. No credit card required.
+            </p>
           </div>
 
-            <div class="waitlist-points">
-    <div class="waitlist-point">
-      <strong>See communication risk before it becomes relationship damage.</strong>
-      Trackt is built for people who do not need another task list. They need visibility into what is actually at risk.
-    </div>
-    <div class="waitlist-point">
-      <strong>Founding members shape the product.</strong>
-      Early users will directly influence the dashboard, the reply layer, and the confidence system.
-    </div>
-    <div class="waitlist-point">
-      <strong>Founding pricing is limited.</strong>
-      First 100 members lock it in for life.
-    </div>
-  </div>
-</div>
+          <article class="founding-card">
+            <div class="founding-kicker">Why join now</div>
+            <h3>Early design partner value without premature pricing theater.</h3>
+            <p>Trackt is still being shaped around real relationship-driven workflows. Founding access gives the right users a direct line into what gets refined first.</p>
+            <ul class="founding-list">
+              <li>Early visibility into launch timing and product direction</li>
+              <li>Priority consideration for design partner onboarding</li>
+              <li>First notice when preferred launch pricing is introduced</li>
+            </ul>
+            <div class="founding-value">This is not a purchase. It is a low-friction way to raise your hand if follow-through risk is already costing attention, trust, or revenue.</div>
+          </article>
+
+          <div class="waitlist-points">
+            <div class="waitlist-point fade-up">
+              <strong>Relationship risk visibility first.</strong>
+              <p>Trackt is being built for people who do not need more noise. They need a cleaner read on what actually requires action.</p>
+            </div>
+            <div class="waitlist-point fade-up">
+              <strong>Built with real workflow pressure in mind.</strong>
+              <p>Early users help shape the confidence layer, dashboard prioritization, and suggested-reply experience around real consequences.</p>
+            </div>
+            <div class="waitlist-point fade-up">
+              <strong>Workflow compatibility stays intact.</strong>
+              <p>No CRM migration promise. No "rip and replace" setup. The goal is an operating layer that fits beside the systems already in use.</p>
+            </div>
+          </div>
+        </div>
 
         <div class="form-shell fade-up">
           <form id="waitlistForm" action="https://formspree.io/f/mkolopaa" method="POST" novalidate>
-            <p class="form-heading">Join the founding 100</p>
+            <p class="form-heading">Request founding access</p>
+            <p class="form-subhead">Tell us who you are and where missed follow-through creates pressure.</p>
+
             <div class="form-grid">
               <div class="field">
                 <label for="firstName">First Name</label>
@@ -1602,43 +1873,193 @@
                 <label for="role">What best describes you?</label>
                 <select id="role" name="role" required>
                   <option value="" selected disabled>Select one</option>
-                  <option>Independent Recruiter</option>
+                  <option>Real Estate Agent or Team</option>
+                  <option>Mortgage Professional</option>
+                  <option>Insurance Professional</option>
+                  <option>Recruiter</option>
                   <option>Consultant</option>
-                  <option>Freelancer</option>
                   <option>Financial Advisor</option>
-                  <option>Mortgage Broker</option>
+                  <option>Client Service Team</option>
                   <option>Other</option>
                 </select>
               </div>
+
+              <div class="field">
+                <label for="painPoint">Where does missed follow-through hurt you most?</label>
+                <textarea id="painPoint" name="pain_point" placeholder="Examples: client follow-up, proposal turnaround, unanswered questions, team handoffs, stalled deals."></textarea>
+              </div>
             </div>
 
-            <button class="btn btn-primary form-submit" type="submit">Claim My Founding Spot</button>
-            <div class="form-meta">We'll email you the moment access opens. No spam. Ever.</div>
+            <button class="btn btn-primary form-submit" type="submit">Get Founding Access</button>
+            <div class="form-meta">No credit card required. We will only contact you about Trackt and early access.</div>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">FAQ</div>
+          <h2>Plain answers before you ever connect anything.</h2>
+          <p>
+            Early trust comes from clarity. These are the questions a serious operator should ask before adopting a product built around communication risk visibility.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item fade-up is-open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>Is Trackt a CRM replacement?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Trackt is not meant to replace your CRM. CRMs store records and pipeline context. Trackt is the operational follow-through layer that helps you see live relationship risk and the next action that matters.</p>
+            </div>
+          </article>
+
+          <article class="faq-item fade-up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is this just another email AI tool?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Trackt is not being built as a generic drafting or summarization layer. The core job is to detect commitments at risk, explain the consequence, and recommend the right next move with visible confidence.</p>
+            </div>
+          </article>
+
+          <article class="faq-item fade-up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Why start with Gmail if Gmail is not the product?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because Gmail is one of the highest-signal places to prove the thesis. Relationship-driven commitments, delays, and unanswered questions already live there. Starting there helps validate the risk model faster before expanding into calendar, Outlook, CRM, and other systems.</p>
+            </div>
+          </article>
+
+          <article class="faq-item fade-up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What happens after I sign up for founding access?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You join the founding list. Trackt uses that list to identify first-fit users and design partners, share launch updates, and notify people when early access opens. You are not buying a subscription and no payment is collected at this stage.</p>
+            </div>
+          </article>
+
+          <article class="faq-item fade-up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Will I have to migrate my workflow?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No CRM migration is part of the value proposition. Trackt is intended to sit beside your current workflow as a calm control layer, not force a disruptive systems change.</p>
+            </div>
+          </article>
+
+          <article class="faq-item fade-up">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How will privacy and access be handled when integrations open?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Future integrations will require explicit authorization. Trackt should clearly explain what is accessed, what is analyzed, and how data is protected before anything is connected. That trust handling stays visible on the page because it is part of the product decision, not an afterthought.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="final-cta-shell fade-up">
+          <div class="final-cta-copy">
+            <div class="eyebrow">Final CTA</div>
+            <h2>Know which commitments need attention before the relationship takes the hit.</h2>
+            <p>
+              If follow-through risk is already costing attention, momentum, or trust, request founding access now and get on the list for early rollout and preferred launch pricing updates later.
+            </p>
+          </div>
+          <a class="btn btn-primary btn-mobile-full" href="#founding">Get Founding Access</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-copy">
-      <img class="footer-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
-      <div class="footer-tagline">Every commitment. Every risk. One view.</div>
-      <div class="footer-meta">Built by Aaryx AI. © 2026. All rights reserved.</div>
-      <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
-    </div>
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        <img class="footer-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
+        <div class="footer-tagline">Operational Follow-Through Intelligence for relationship-driven businesses.</div>
+        <div class="footer-meta">Built by AARYX AI. © 2026. All rights reserved.</div>
+        <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
+      </div>
 
-    <div class="footer-links" aria-label="Footer links">
-      <a href="privacy.html">Privacy Policy</a>
-      <span>|</span>
-      <a href="terms.html">Terms</a>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script>
+    const proofData = {
+      'at-risk': {
+        status: 'At Risk',
+        statusClass: 'at-risk',
+        confidence: 'High confidence',
+        title: 'Revised proposal promised Friday. Still unsent.',
+        whatHappened: 'A clear commitment was made in-thread and the promised follow-through never happened.',
+        whyItMatters: 'The client is waiting on a deliverable tied directly to decision timing and confidence.',
+        nextMove: 'Own the miss quickly, reset the expectation, and send the revised proposal update now.',
+        reply: 'Quick update. I missed the Friday timing I gave you and wanted to own that directly. I am finalizing the revision now and will have it in your inbox by 3 PM today.',
+        pressure: 'Overdue',
+        impact: 'Trust exposed',
+        evidence: '"I\'ll send the revised proposal by Friday so you can review before the weekend."',
+        relationship: 'Sarah Mitchell. Prospect evaluating whether to move forward this week.',
+        riskImpact: 'High',
+        timePressure: 'Today',
+        operational: 'Trackt highlights an explicit commitment, the risk to momentum, and the action needed before silence forces the client to chase.'
+      },
+      'needs-attention': {
+        status: 'Needs Attention',
+        statusClass: 'needs',
+        confidence: 'Medium confidence',
+        title: 'Buyer agent question is still unanswered after 48 hours.',
+        whatHappened: 'Trackt sees an open question with no response and no visible handoff resolution in the thread.',
+        whyItMatters: 'The delay does not look catastrophic yet, but it is creating friction where responsiveness shapes confidence.',
+        nextMove: 'Answer the question directly, confirm the next step, and close the loop before the thread cools further.',
+        reply: 'Thanks for the nudge. I should have answered this sooner. The confirmation you need is below, and I am available if you want to walk through the timing live today.',
+        pressure: 'Urgent',
+        impact: 'Momentum slipping',
+        evidence: '"Can you confirm whether the inspection window changes if we move closing by a week?"',
+        relationship: 'Buyer\'s agent in an active transaction where responsiveness affects trust on both sides.',
+        riskImpact: 'Medium',
+        timePressure: 'Next few hours',
+        operational: 'Trackt treats unanswered questions as relationship friction. It surfaces them before they harden into a reputation problem.'
+      },
+      'waiting-on-others': {
+        status: 'Waiting on Others',
+        statusClass: 'waiting',
+        confidence: 'High confidence',
+        title: 'Lender promised an updated estimate by Tuesday. It never arrived.',
+        whatHappened: 'The other party made a time-bound commitment and the thread shows the date has passed without resolution.',
+        whyItMatters: 'You may not own the delay, but you still own the relationship impact if nobody follows up at the right time.',
+        nextMove: 'Send a calm check-in that references the prior commitment and keeps the client updated without sounding reactive.',
+        reply: 'Checking in on the updated estimate you mentioned for Tuesday. If timing slipped on your side, no problem. I just want to keep everyone aligned on next steps and expected timing.',
+        pressure: 'Waiting',
+        impact: 'Handoff exposed',
+        evidence: '"I\'ll send the updated estimate Tuesday morning once underwriting confirms the change."',
+        relationship: 'Shared client handoff where silence from another party can still make you look out of control.',
+        riskImpact: 'Medium',
+        timePressure: 'Follow up tomorrow morning',
+        operational: 'Trackt helps users manage dependencies without guessing when to chase, escalate, or wait. It keeps accountability visible across the relationship.'
+      }
+    };
+
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
@@ -1665,6 +2086,75 @@
       });
     }
 
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const proofStatus = document.getElementById('proofStatus');
+    const proofConfidence = document.getElementById('proofConfidence');
+    const proofTitle = document.getElementById('proofTitle');
+    const proofWhatHappened = document.getElementById('proofWhatHappened');
+    const proofWhyItMatters = document.getElementById('proofWhyItMatters');
+    const proofNextMove = document.getElementById('proofNextMove');
+    const proofReply = document.getElementById('proofReply');
+    const detailPressure = document.getElementById('detailPressure');
+    const detailImpact = document.getElementById('detailImpact');
+    const detailEvidence = document.getElementById('detailEvidence');
+    const detailRelationship = document.getElementById('detailRelationship');
+    const detailRiskImpact = document.getElementById('detailRiskImpact');
+    const detailTimePressure = document.getElementById('detailTimePressure');
+    const detailOperational = document.getElementById('detailOperational');
+
+    function renderProof(itemKey) {
+      const item = proofData[itemKey];
+      if (!item) return;
+
+      proofStatus.textContent = item.status;
+      proofStatus.className = `risk-label bucket-label ${item.statusClass}`;
+      proofConfidence.textContent = item.confidence;
+      proofTitle.textContent = item.title;
+      proofWhatHappened.textContent = item.whatHappened;
+      proofWhyItMatters.textContent = item.whyItMatters;
+      proofNextMove.textContent = item.nextMove;
+      proofReply.textContent = item.reply;
+      detailPressure.textContent = item.pressure;
+      detailImpact.textContent = item.impact;
+      detailEvidence.textContent = item.evidence;
+      detailRelationship.textContent = item.relationship;
+      detailRiskImpact.textContent = item.riskImpact;
+      detailTimePressure.textContent = item.timePressure;
+      detailOperational.textContent = item.operational;
+
+      tabButtons.forEach((button) => {
+        const active = button.dataset.item === itemKey;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-selected', String(active));
+      });
+    }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => renderProof(button.dataset.item));
+    });
+
+    renderProof('at-risk');
+
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+      const trigger = item.querySelector('.faq-question');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+        faqItems.forEach((faqItem) => {
+          faqItem.classList.remove('is-open');
+          const faqTrigger = faqItem.querySelector('.faq-question');
+          if (faqTrigger) faqTrigger.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
     const form = document.getElementById('waitlistForm');
     const statusBox = document.getElementById('formStatus');
 
@@ -1676,7 +2166,7 @@
 
         if (!form.reportValidity()) {
           statusBox.className = 'form-status error';
-          statusBox.textContent = 'Please complete all fields before submitting.';
+          statusBox.textContent = 'Please complete the required fields before submitting.';
           return;
         }
 
@@ -1701,7 +2191,9 @@
           form.reset();
           statusBox.className = 'form-status success';
           statusBox.textContent = "You're on the list. Redirecting...";
-		  setTimeout(() => { window.location.href = 'thankyou.html'; }, 1200);
+          setTimeout(() => {
+            window.location.href = 'thankyou.html';
+          }, 1200);
         } catch (error) {
           statusBox.className = 'form-status error';
           statusBox.textContent = 'Could not submit right now. Replace the Formspree endpoint and try again.';
