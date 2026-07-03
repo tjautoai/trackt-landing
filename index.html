@@ -1000,6 +1000,44 @@
       font-size: 0.96rem;
     }
 
+    .launch-pricing-callout {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      display: grid;
+      gap: 10px;
+    }
+
+    .launch-pricing-title {
+      color: var(--muted-strong);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .launch-pricing-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.95rem;
+      color: var(--muted-strong);
+    }
+
+    .launch-pricing-row span:last-child {
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .launch-pricing-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
     .founding-value {
       margin-top: 18px;
       color: var(--text);
@@ -1382,7 +1420,7 @@
         <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
           <span></span>
         </button>
-        <a class="btn btn-primary" href="#founding">Get Founding Access</a>
+        <a class="btn btn-primary" href="#founding">Request Founding Access</a>
       </div>
     </div>
   </header>
@@ -1392,9 +1430,9 @@
       <div class="container hero-grid">
         <div class="hero-copy fade-up">
           <div class="eyebrow">Operational Follow-Through Intelligence</div>
-          <h1>Calm control over commitments at risk.</h1>
+          <h1>Know which commitments put trust and revenue at risk.</h1>
           <p>
-            Trackt helps relationship-driven businesses see which follow-through gaps, unanswered questions, and buried commitments are quietly moving toward trust damage before the business feels the consequence.
+            Trackt shows which follow-through gaps, unanswered questions, and buried commitments need attention before they damage the relationship or slow the outcome.
           </p>
 
           <div class="hero-signals" aria-label="Trackt dashboard buckets">
@@ -1404,12 +1442,12 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#founding">Get Founding Access</a>
+            <a class="btn btn-primary" href="#founding">Request Founding Access</a>
             <a class="btn btn-ghost" href="#proof">See Dashboard Proof</a>
           </div>
 
           <div class="hero-note">
-            Built for operators whose revenue depends on trust, timing, and follow-through. No CRM migration. No credit card required.
+            Built for operators whose revenue depends on trust, timing, and follow-through. Designed from real operational follow-through challenges. No CRM migration. No credit card required.
           </div>
 
           <div class="hero-proofline" aria-label="Trackt hero proof points">
@@ -1490,7 +1528,7 @@
           <div class="eyebrow">The Hidden Cost of Missed Commitments</div>
           <h2>The damage rarely starts with a lost deal. It starts with one missed moment.</h2>
           <p>
-            A promised follow-up slips. A client question sits too long. A handoff stalls inside a thread. The problem is not email volume. The problem is invisible business consequence.
+            A promised follow-up slips. A client question sits too long. A handoff stalls inside a thread. The problem is not email volume. It is invisible business consequence.
           </p>
         </div>
 
@@ -1532,7 +1570,7 @@
           <div class="eyebrow">What Trackt Sees That Other Tools Miss</div>
           <h2>Most tools organize communication. Trackt interprets business consequence.</h2>
           <p>
-            The difference is not more reminders or cleaner folders. The difference is understanding what happened, why it matters to the relationship, and what action protects the outcome now.
+            The difference is not more reminders or cleaner folders. It is understanding what happened, why it matters to the relationship, and what action protects the outcome now.
           </p>
         </div>
 
@@ -1677,7 +1715,7 @@
           <div class="eyebrow">Why Gmail Is Only the Beginning</div>
           <h2>Trackt starts where commitments already live. It does not stop there.</h2>
           <p>
-            Gmail is the first signal source because that is where many high-stakes follow-through moments already happen. It is the fastest place to prove the core problem. It is not the category and it is not the long-term ceiling.
+            Gmail is the first signal source because many high-stakes follow-through moments already happen there. It is the fastest place to prove the core problem. It is not the category and it is not the ceiling.
           </p>
         </div>
 
@@ -1750,7 +1788,7 @@
           <div class="eyebrow">Trust &amp; Security</div>
           <h2>Inbox access is a trust decision. The page should answer that clearly.</h2>
           <p>
-            Trackt needs to earn trust before it earns access. That means plain-English expectations about privacy, security, workflow compatibility, and what actually happens after signup.
+            Trackt needs to earn trust before it earns access. That means plain-English expectations about privacy, workflow fit, and what actually happens after signup.
           </p>
         </div>
 
@@ -1821,7 +1859,7 @@
             <div class="eyebrow">Founding Access</div>
             <h2>Get in early if this is already your problem.</h2>
             <p>
-              Founding access is for operators who want calm operational control, a direct feedback loop, and first consideration for preferred launch pricing later. No credit card required.
+              Founding access is for operators who want calm control, a direct feedback loop, and first consideration for preferred launch pricing later. No credit card required.
             </p>
           </div>
 
@@ -1834,28 +1872,34 @@
               <li>Priority consideration for design partner onboarding</li>
               <li>First notice when preferred launch pricing is introduced</li>
             </ul>
+            <div class="launch-pricing-callout" aria-label="Expected launch pricing">
+              <div class="launch-pricing-title">Expected launch pricing</div>
+              <div class="launch-pricing-row"><span>Starter</span><span>From $14.99/month</span></div>
+              <div class="launch-pricing-row"><span>Professional</span><span>From $49.99/month</span></div>
+              <div class="launch-pricing-note">Founding members will receive preferred lifetime pricing before public launch.</div>
+            </div>
             <div class="founding-value">This is not a purchase. It is a low-friction way to raise your hand if follow-through risk is already costing attention, trust, or revenue.</div>
           </article>
 
           <div class="waitlist-points">
             <div class="waitlist-point fade-up">
               <strong>Relationship risk visibility first.</strong>
-              <p>Trackt is being built for people who do not need more noise. They need a cleaner read on what actually requires action.</p>
+              <p>Trackt is being built for people who do not need more noise. They need a cleaner read on what requires action.</p>
             </div>
             <div class="waitlist-point fade-up">
               <strong>Built with real workflow pressure in mind.</strong>
-              <p>Early users help shape the confidence layer, dashboard prioritization, and suggested-reply experience around real consequences.</p>
+              <p>Early users help shape the confidence layer, dashboard prioritization, and suggested replies around real consequences.</p>
             </div>
             <div class="waitlist-point fade-up">
               <strong>Workflow compatibility stays intact.</strong>
-              <p>No CRM migration promise. No "rip and replace" setup. The goal is an operating layer that fits beside the systems already in use.</p>
+              <p>No CRM migration. No "rip and replace" setup. The goal is an operating layer that fits beside the systems already in use.</p>
             </div>
           </div>
         </div>
 
         <div class="form-shell fade-up">
           <form id="waitlistForm" action="https://formspree.io/f/mkolopaa" method="POST" novalidate>
-            <p class="form-heading">Request founding access</p>
+            <p class="form-heading">Request Founding Access</p>
             <p class="form-subhead">Tell us who you are and where missed follow-through creates pressure.</p>
 
             <div class="form-grid">
@@ -1890,7 +1934,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary form-submit" type="submit">Get Founding Access</button>
+            <button class="btn btn-primary form-submit" type="submit">Request Founding Access</button>
             <div class="form-meta">No credit card required. We will only contact you about Trackt and early access.</div>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
@@ -1979,10 +2023,10 @@
             <div class="eyebrow">Final CTA</div>
             <h2>Know which commitments need attention before the relationship takes the hit.</h2>
             <p>
-              If follow-through risk is already costing attention, momentum, or trust, request founding access now and get on the list for early rollout and preferred launch pricing updates later.
+              If follow-through risk is already costing attention, momentum, or trust, request founding access now and hear first when early rollout opens.
             </p>
           </div>
-          <a class="btn btn-primary btn-mobile-full" href="#founding">Get Founding Access</a>
+          <a class="btn btn-primary btn-mobile-full" href="#founding">Request Founding Access</a>
         </div>
       </div>
     </section>
