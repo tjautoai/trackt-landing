@@ -84,24 +84,31 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       min-height: 48px;
       padding: 0 20px;
       border-radius: 999px;
       border: 1px solid transparent;
       cursor: pointer;
       font-family: 'Space Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       letter-spacing: -0.02em;
       white-space: nowrap;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .btn:hover,
+    .btn:focus-visible { transform: translateY(-1px); }
 
     .btn-primary {
       background: linear-gradient(180deg, var(--primary-2), var(--primary));
-      color: var(--text);
-      box-shadow: 0 10px 24px rgba(59, 106, 245, 0.25);
+      color: var(--bg);
+      box-shadow: 0 12px 28px rgba(0, 212, 200, 0.22);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      box-shadow: 0 16px 36px rgba(0, 212, 200, 0.28);
     }
 
     /* CONTENT */
@@ -369,7 +376,7 @@
       <a class="brand" href="index.html" aria-label="Trackt home">
         <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
       </a>
-      <a class="btn btn-primary" href="index.html#waitlist">Join Waitlist</a>
+      <a class="btn btn-primary" href="index.html#founding">Request Founding Access</a>
     </div>
   </header>
 
