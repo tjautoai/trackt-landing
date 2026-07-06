@@ -6,10 +6,6 @@
   <title>Terms of Service | Trackt</title>
   <meta name="description" content="Trackt Terms of Service. The rules governing your use of the Trackt waitlist and platform." />
   <meta name="theme-color" content="#0A0A0A" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
-  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
@@ -100,14 +96,20 @@
     .btn:focus-visible { transform: translateY(-1px); }
 
     .btn-primary {
-      background: linear-gradient(180deg, var(--primary-2), var(--primary));
-      color: var(--bg);
+      background: linear-gradient(180deg, #12e6db, #00d4c8);
+      color: #0a0e1a;
       box-shadow: 0 12px 28px rgba(0, 212, 200, 0.22);
     }
 
     .btn-primary:hover,
     .btn-primary:focus-visible {
       box-shadow: 0 16px 36px rgba(0, 212, 200, 0.28);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .legal-hero {
@@ -307,7 +309,7 @@
 
     .footer-tagline, .footer-meta { color: var(--muted); font-size: 0.94rem; }
 
-    .footer-brand-link {
+    .footer-site-link {
       color: var(--primary);
       font-size: 0.94rem;
     }
@@ -320,8 +322,13 @@
       font-size: 0.94rem;
     }
 
-    .footer-links a:hover,
-    .footer-brand-link:hover { color: var(--text); }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 920px) {
+      .nav-actions .btn {
+        display: none;
+      }
+    }
 
     @media (max-width: 860px) {
       .legal-body { grid-template-columns: 1fr; }
@@ -340,7 +347,9 @@
       <a class="brand" href="index.html" aria-label="Trackt home">
         <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
       </a>
-      <a class="btn btn-primary" href="index.html#founding">Request Founding Access</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="index.html#founding">Request Founding Access</a>
+      </div>
     </div>
   </header>
 
@@ -501,7 +510,8 @@
       <div class="footer-copy">
         <img class="footer-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
         <div class="footer-tagline">Every morning. Everything that matters.</div>
-        <div class="footer-meta">Built by <a class="footer-brand-link" href="https://www.aaryxai.com" target="_blank" rel="noopener noreferrer">AARYX AI</a>. © 2026. All rights reserved.</div>
+        <div class="footer-meta">© 2026 Aaryx AI. All rights reserved.</div>
+        <a class="footer-site-link" href="https://usetrackt.app" target="_blank" rel="noopener noreferrer">usetrackt.app</a>
       </div>
 
       <div class="footer-links">
