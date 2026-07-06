@@ -85,31 +85,34 @@
       border-radius: 999px;
       border: 1px solid transparent;
       cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
       font-family: 'Space Mono', monospace;
       font-size: 0.94rem;
       letter-spacing: -0.02em;
       white-space: nowrap;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
     }
 
     .btn:hover,
     .btn:focus-visible { transform: translateY(-1px); }
 
-    .btn-primary {
-      background: linear-gradient(180deg, #12e6db, #00d4c8);
-      color: #0a0e1a;
-      box-shadow: 0 12px 28px rgba(0, 212, 200, 0.22);
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      box-shadow: 0 16px 36px rgba(0, 212, 200, 0.28);
-    }
-
     .nav-actions {
+      --primary: #00d4c8;
+      --primary-2: #12e6db;
+      --bg: #0a0e1a;
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    .nav-actions .btn-primary {
+      background: linear-gradient(180deg, var(--primary-2), var(--primary));
+      color: var(--bg);
+      box-shadow: 0 12px 28px rgba(0, 212, 200, 0.22);
+    }
+
+    .nav-actions .btn-primary:hover,
+    .nav-actions .btn-primary:focus-visible {
+      box-shadow: 0 16px 36px rgba(0, 212, 200, 0.28);
     }
 
     .legal-hero {
