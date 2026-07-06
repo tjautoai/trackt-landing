@@ -286,10 +286,18 @@
       gap: 10px;
     }
 
+    .footer-meta {
+      color: var(--muted);
+    }
+
     .footer-logo {
       height: 36px;
       width: auto;
       object-fit: contain;
+    }
+
+    .footer-brand-link {
+      color: var(--primary);
     }
 
     .footer-links {
@@ -297,7 +305,8 @@
       gap: 12px;
     }
 
-    .footer-links a:hover { color: var(--text); }
+    .footer-links a:hover,
+    .footer-brand-link:hover { color: var(--text); }
 
     @media (max-width: 520px) {
       .cta-row { flex-direction: column; }
@@ -371,7 +380,7 @@
     <div class="footer-inner">
       <div class="footer-copy">
         <img class="footer-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
-        <span>© 2026 Aaryx AI. All rights reserved.</span>
+        <div class="footer-meta">Built by <a class="footer-brand-link" href="https://www.aaryxai.com" target="_blank" rel="noopener noreferrer">AARYX AI</a>. © 2026. All rights reserved.</div>
       </div>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
