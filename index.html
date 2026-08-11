@@ -1449,9 +1449,20 @@
       }
     }
   </style>
-</head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TV64TRM9');</script>
+    <!-- End Google Tag Manager -->
+  </head>
 <body>
-  <header class="site-header">
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV64TRM9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<header class="site-header">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Trackt home">
         <img class="brand-logo" src="assets/trackt_horizontal_dark.png" alt="Trackt" />
@@ -1463,14 +1474,14 @@
         <a href="#proof">Proof</a>
         <a href="#trust">Trust</a>
         <a href="#faq">FAQ</a>
-        <a href="#founding">Founding Access</a>
+        <a href="#founding" data-analytics-event="trackt_primary_cta">Founding Access</a>
       </nav>
 
       <div class="nav-actions">
         <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
           <span></span>
         </button>
-        <a class="btn btn-primary" href="#founding">Request Founding Access</a>
+        <a class="btn btn-primary" href="#founding" data-analytics-event="trackt_primary_cta">Request Founding Access</a>
       </div>
     </div>
   </header>
@@ -1492,7 +1503,7 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#founding">Request Founding Access</a>
+            <a class="btn btn-primary" href="#founding" data-analytics-event="trackt_primary_cta">Request Founding Access</a>
             <a class="btn btn-ghost" href="#proof">See Dashboard Proof</a>
           </div>
 
@@ -1948,7 +1959,7 @@
         </div>
 
         <div class="form-shell fade-up">
-          <form id="waitlistForm" action="https://formspree.io/f/mkolopaa" method="POST" novalidate>
+          <form id="waitlistForm" action="https://formspree.io/f/mkolopaa" method="POST" novalidate data-analytics-form="trackt_waitlist_form" data-analytics-event="trackt_waitlist_submit">
             <p class="form-heading">Request Founding Access</p>
             <p class="form-subhead">Tell us who you are and where missed follow-through creates pressure.</p>
 
@@ -1984,7 +1995,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary form-submit" type="submit">Request Founding Access</button>
+            <button class="btn btn-primary form-submit" type="submit" data-analytics-event="trackt_waitlist_submit">Request Founding Access</button>
             <div class="form-meta">No credit card required. We will only contact you about Trackt and early access.</div>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
@@ -2075,7 +2086,7 @@
               If follow-through risk is already costing attention, momentum, or trust, request founding access now and hear first when early rollout opens.
             </p>
           </div>
-          <a class="btn btn-primary btn-mobile-full" href="#founding">Request Founding Access</a>
+          <a class="btn btn-primary btn-mobile-full" href="#founding" data-analytics-event="trackt_primary_cta">Request Founding Access</a>
         </div>
       </div>
     </section>
