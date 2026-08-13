@@ -172,12 +172,12 @@
     }
 
     .section {
-      padding: 88px 0;
+      padding: 80px 0;
     }
 
     .section-header {
       max-width: 760px;
-      margin-bottom: 34px;
+      margin-bottom: 28px;
     }
 
     .section-header h2 {
@@ -704,7 +704,7 @@
     .trust-card,
     .process-card,
     .founding-card {
-      padding: 24px;
+      padding: 22px;
     }
 
     .stat-kicker,
@@ -1035,8 +1035,9 @@
 
     .waitlist-points {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 20px;
     }
 
     .waitlist-point {
@@ -1332,7 +1333,8 @@
     @media (max-width: 1120px) {
       .cost-grid,
       .trust-grid,
-      .trust-flow {
+      .trust-flow,
+      .waitlist-points {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1380,7 +1382,8 @@
       .cost-grid,
       .trust-grid,
       .trust-flow,
-      .process-grid {
+      .process-grid,
+      .waitlist-points {
         grid-template-columns: 1fr;
       }
 
@@ -1920,7 +1923,7 @@
             <div class="eyebrow">Founding Access</div>
             <h2>Get in early if this is already your problem.</h2>
             <p>
-              Founding access is for operators who want calm control, a direct feedback loop, and first consideration for preferred launch pricing later. No credit card required.
+              Founding access is for operators who want calm control, a direct feedback loop, and early pricing consideration later. No credit card required.
             </p>
           </div>
 
@@ -1945,11 +1948,11 @@
           <div class="waitlist-points">
             <div class="waitlist-point fade-up">
               <strong>Relationship risk visibility first.</strong>
-              <p>Trackt is being built for people who do not need more noise. They need a cleaner read on what requires action.</p>
+              <p>Trackt is being built for people who do not need more noise. They need a cleaner read on what needs action.</p>
             </div>
             <div class="waitlist-point fade-up">
               <strong>Built with real workflow pressure in mind.</strong>
-              <p>Early users help shape the confidence layer, dashboard prioritization, and suggested replies around real consequences.</p>
+              <p>Early users help shape the confidence layer, dashboard priorities, and suggested replies around real consequences.</p>
             </div>
             <div class="waitlist-point fade-up">
               <strong>Workflow compatibility stays intact.</strong>
@@ -1997,7 +2000,7 @@
 
             <button class="btn btn-primary form-submit" type="submit" data-analytics-event="trackt_waitlist_submit">Request Founding Access</button>
             <div class="form-meta">No credit card required. We will only contact you about Trackt and early access.</div>
-            <div class="form-meta"><a href="https://www.aaryxai.com/blueprint.html" target="_blank" rel="noopener noreferrer">Need broader diagnosis first? Take the free AARYX Blueprint.</a></div>
+            <div class="form-meta"><a href="https://www.aaryxai.com/blueprint/" target="_blank" rel="noopener noreferrer">Need broader diagnosis first? Take the free AARYX Blueprint.</a></div>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
         </div>
